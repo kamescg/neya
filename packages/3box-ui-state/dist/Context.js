@@ -64,7 +64,7 @@ var Context = (0, _react.createContext)({
   // Boolean
   isInitialized: false,
   isRequestOpen: false,
-  isEnableAuto: false,
+  isEnableAuto: true,
   // Request ETH Address
   isLoginAuto: false,
   // Request 3Box Login

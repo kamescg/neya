@@ -1,130 +1,277 @@
+import React, {useState, useEffect} from 'react';
+import {useThemeUI} from 'theme-ui';
+// import SEO from "../components/seo"
+import {Site} from 'templates';
+import {Card} from '@horizin/design-system-atoms';
+import Waves from 'assets/images/waveDark.svg';
+import {FeaturesList} from 'views';
+import {useApplyStyle} from '@horizin/design-system-atoms';
+import {Slides} from '@horizin/design-system-molecules';
 
-import { Site } from 'templates'
-import {
-  AccessProfileExample,
-  AccessSpaceExample,
-  AccessThreadExample,
-  AddLoginExample,
-  EnableEthereumExample,
-  InitProviderExample,
-  SpaceOpenExample,
-  StorageDeleteExample,
-  StorageMergeExample,
-  StorageProfileSetExample,
-  ThreadJoinExample,
-  ThreadPostDeleteExample,
-  ThreadPostPublishExample
-} from 'content/examples'
-
-import { Card } from '@horizin/design-system-atoms'
-const showcase = {
-  title: 'Web3 Identity Made Easy',
-  tagline: 'Compose Authentication, Storage and Messaging features together via 3Box Extensions.',
-}
-
-/* --- Component --- */
-const Home = props =>
-  <Site sx={{ bg: 'paper', color: 'text' }} sxMain={{ alignItems: 'center', justifyContent: 'center' }}>
-    <Molecule.Card
-      layout='showcase'
-      variants={['large', 'centered']}
-      sx={{
-        p: 3,
-        py: 4,
-      }}
-      sxTitle={{
-        fontWeight: 700
-      }}
-      sxTagline={{
-        fontWeight: 300
-      }}
-      sxMain={{
-        maxWidth: 980
-      }}
-      {...showcase}
-      image={null}
-    />
-    <a href='https://github.com/kamescg/3box-extensions'>
-      <Atom.Span variants={['tag']} effects={['white']}>Github</Atom.Span>
-    </a>
-    <Atom.Container maxWidth={980} sx={{ my: 5 }}>
-      <ModuleFeatured
-        title='3Box UI State'
-        content='The 3Box UI State library utilizes the latest updates in React: Context, Hooks and Effects. Providing a lighweight state management layer to handle core 3Box interactions. Easily request data and listen to global state from any application.'
-        image='https://image.flaticon.com/icons/svg/390/390566.svg'
-        sx={{
-          my: 3
-        }}
-      />
-      <ModuleFeatured
-        title='3Box UI System'
-        content='The 3Box UI State library helps frontend developers easily start integrating core 3Box decentralized identity features: authentication, storage and messaging. Start adding login buttons, access control, storaging merging, thread listening, and more in just a couple of minutes'
-        image='https://image.flaticon.com/icons/svg/180/180100.svg'
-        sx={{
-          my: 3
-        }}
-      />
-      <ModuleFeatured
-        title='3Box UI System Render'
-        content='The 3Box UI State library helps developers predictably fetch data from 3Box profiles, spaces and threads and pass that data into render components. Easily render lists, items and mutate data structures without worrying about minor React render details (element, component, factory, etc...). '
-        image='https://image.flaticon.com/icons/svg/904/904905.svg'
-        sx={{
-          my: 3
-        }}
-      />
-
-    </Atom.Container>
-
-    <Atom.Container>
-      <Atom.Heading giga heavy sx={{textAlign: 'center', py: 3}} >Setup</Atom.Heading>
-      <InitProviderExample />
-      <EnableEthereumExample />
-
-      <Atom.Heading giga heavy sx={{textAlign: 'center', py: 3}} >Authenticate</Atom.Heading>
-      <AddLoginExample />
-      <SpaceOpenExample />
-      <ThreadJoinExample />
-
-      <Atom.Heading giga heavy sx={{textAlign: 'center', py: 3}} >Access Control</Atom.Heading>
-      <AccessProfileExample />
-      <AccessSpaceExample />
-      <AccessThreadExample />
-
-      <Atom.Heading giga heavy sx={{textAlign: 'center', py: 3}} >Storage</Atom.Heading>
-      <StorageProfileSetExample />
-      <StorageMergeExample />
-      <StorageDeleteExample />
-
-      <Atom.Heading giga heavy sx={{textAlign: 'center', py: 3}} >Messaging</Atom.Heading>
-      <ThreadPostPublishExample />
-      <ThreadPostDeleteExample />
-
-      <Atom.Span variants={['tag']} effects={['white']}>Rapidly buidl Decentralized Applications</Atom.Span>
-    </Atom.Container>
-
-
+const IndexPage = () => (
+  <Site>
+    {/* <SEO title="Home" /> */}
+    <Showcase />
+    <ApplicationPreview />
+    <Preview />
+    <Features />
   </Site>
+);
 
-export default Home
+export default IndexPage;
 
-
-const ModuleFeatured = props => {
-
+const Showcase = props => {
   return (
-    <Atom.Flex variants={['card']} sx={props.sx} >
-      <Atom.Flex center column sx={{ flex: 2 }} >
-        <Atom.Image src={props.image} sx={{ maxWidth: 80 }} />
-      </Atom.Flex>
-      <Atom.Flex column sx={{ flex: 6 }} >
-        <Atom.Heading xl heavy>{props.title}</Atom.Heading>
-        <Atom.Paragraph>
-          {props.content}
-        </Atom.Paragraph>
-      </Atom.Flex>
+    <Atom.Flex sx={{bg: 'blue', gradient: 'blue', color: 'white', p: 0}}>
+      <Atom.BackgroundGradient gradient="blue" ratio={1} opacity={1} />
+      <Atom.BackgroundImage
+        opacity={0.52}
+        src="https://s.gitcoin.co/static/v2/images/header-bg.png"
+        ratio={0.1}
+      />
+      {/* <Atom.BackgroundImage src={Waves} ratio={.01} sx={{height: '50vh'}} /> */}
+      <Atom.Absolute sx={{bottom: 0, left: 0, right: 0, height: '50%'}}>
+        <Atom.BackgroundImage
+          src={Waves}
+          ratio={0.01}
+          sx={{backgroundSize: 'contain', backgroundPosition: 'right'}}
+        />
+      </Atom.Absolute>
+      <Atom.Container>
+        <Atom.Flex>
+          <Atom.Flex center column sx={{flex: 4}}>
+            <Atom.Box>
+              <Atom.Heading giga>Jobs for Develoeprs</Atom.Heading>
+              <Atom.Heading md thin>
+                An Experiment to Connect Developers w/ Jobs
+              </Atom.Heading>
+              <Atom.Paragraph>
+                Quisque velit elit, mollis vitae risus at, fermentum cursus
+                erat. Integer pulvinar lobortis diam eget feugiat. Vestibulum
+                ante ipsum primis in faucibus orci luctus et ultrices posuere
+                cubilia Curae; Integer porta a urna eget rutrum.
+              </Atom.Paragraph>
+              <Atom.Flex>
+                <Atom.Button white curved>
+                  Search
+                </Atom.Button>
+                <Atom.Button white curved sx={{ml: 3}}>
+                  Create Profile
+                </Atom.Button>
+              </Atom.Flex>
+            </Atom.Box>
+          </Atom.Flex>
+          <Atom.Flex center column sx={{flex: 4}}>
+            <Atom.Image
+              maxWidth={350}
+              sx={{mt: 5}}
+              src="https://imgur.com/bn8Tezt.png"
+            />
+          </Atom.Flex>
+        </Atom.Flex>
+      </Atom.Container>
     </Atom.Flex>
-  )
-}
+  );
+};
 
+const Features = props => {
+  return (
+    <Atom.Box sx={{bg: 'paper', color: 'text', py: 4}}>
+      <Atom.Flex center column py={[2, 2, 4]}>
+        <Atom.Heading xxl heavy center>
+          Connecting Developers w/ Jobs
+        </Atom.Heading>
+        <Atom.Heading md thin>
+          Cerebro Facilitates a 2-Sided Market between Talented Developers and
+          Businesses{' '}
+        </Atom.Heading>
+      </Atom.Flex>
 
+      <Atom.Container>
+        <Atom.Flex>
+          <Atom.Box sx={{flex: 1, p: 4}}>
+            <Atom.Image
+              maxWidth={40}
+              src="https://image.flaticon.com/icons/svg/1085/1085710.svg"
+            />
+            <Atom.Image
+              maxWidth={40}
+              src="https://image.flaticon.com/icons/svg/1085/1085710.svg"
+            />
+            <Atom.Heading xl>Feature Focused</Atom.Heading>
+            <Atom.Paragraph>
+              Quisque velit elit, mollis vitae risus at, fermentum cursus erat.
+              Integer pulvinar lobortis diam eget feugiat. Vestibulum ante ipsum
+              primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+              Integer porta a urna eget rutrum.
+            </Atom.Paragraph>
+          </Atom.Box>
 
+          <Atom.Box sx={{flex: 1, p: 4}}>
+            <Atom.Image
+              maxWidth={40}
+              src="https://image.flaticon.com/icons/svg/1029/1029183.svg"
+            />
+            <Atom.Heading xl>Open Source</Atom.Heading>
+            <Atom.Paragraph>
+              Quisque velit elit, mollis vitae risus at, fermentum cursus erat.
+              Integer pulvinar lobortis diam eget feugiat. Vestibulum ante ipsum
+              primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+              Integer porta a urna eget rutrum.
+            </Atom.Paragraph>
+          </Atom.Box>
 
+          <Atom.Box sx={{flex: 1, p: 4}}>
+            <Atom.Image
+              maxWidth={40}
+              src="https://image.flaticon.com/icons/svg/138/138681.svg"
+            />
+            <Atom.Heading xl>Developer Profiles</Atom.Heading>
+            <Atom.Paragraph>
+              Quisque velit elit, mollis vitae risus at, fermentum cursus erat.
+              Integer pulvinar lobortis diam eget feugiat. Vestibulum ante ipsum
+              primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+              Integer porta a urna eget rutrum.
+            </Atom.Paragraph>
+          </Atom.Box>
+        </Atom.Flex>
+      </Atom.Container>
+    </Atom.Box>
+  );
+};
+
+const items = [
+  <Atom.Flex center column sx={{p: 1, mx: 5}}>
+    <Atom.Image
+      maxWidth={350}
+      sx={{mt: 0}}
+      src="https://imgur.com/wQ9p3qi.png"
+    />
+  </Atom.Flex>,
+  <Atom.Flex center column sx={{p: 1, mx: 5}}>
+    <Atom.Image
+      maxWidth={350}
+      sx={{mt: 0}}
+      src="https://imgur.com/Jxi9dub.png"
+    />
+  </Atom.Flex>,
+  <Atom.Flex center column sx={{p: 1, mx: 5}}>
+    <Atom.Image
+      maxWidth={350}
+      sx={{mt: 0}}
+      src="https://imgur.com/wQ9p3qi.png"
+    />
+  </Atom.Flex>,
+  <Atom.Flex center column sx={{p: 1, mx: 5}}>
+    <Atom.Image
+      maxWidth={350}
+      sx={{mt: 0}}
+      src="https://imgur.com/Jxi9dub.png"
+    />
+  </Atom.Flex>,
+];
+
+const styles = {
+  desktopPreview: {
+    p: 4,
+    ml: [1, 1, '-50%'],
+    width: [1, 1, '150%'],
+  },
+};
+
+const ApplicationPreview = props => {
+  return (
+    <Atom.Flex sx={{bg: 'paper', color: 'text', py: 3}}>
+      <Atom.Container>
+        <Atom.Flex center column sx={{my: 2}}>
+          <Atom.Image
+            maxWidth={90}
+            src="https://image.flaticon.com/icons/svg/1161/1161388.svg"
+            sx={{
+              my: 4,
+            }}
+          />
+          <Atom.Heading xxl heavy>
+            A Network of Developers at Your Disposal
+          </Atom.Heading>
+          <Atom.Heading md thin>
+            Ask for what you need and we'll use the latest in decentralized and
+            machine learning to bring you the perfect match.
+          </Atom.Heading>
+        </Atom.Flex>
+        <Atom.Flex alignCenter>
+          <Atom.Flex center column sx={{flex: 6}}>
+            <Atom.Box sx={styles.desktopPreview}>
+              <Atom.Image
+                maxWidth={1040}
+                sx={{mt: 0}}
+                src="https://imgur.com/at7A9cr.png"
+              />
+            </Atom.Box>
+          </Atom.Flex>
+
+          <Atom.Flex column sx={{flex: 4}}>
+            <Atom.Box sx={{mt: 4}}>
+              <Atom.Image
+                maxWidth={90}
+                src="https://image.flaticon.com/icons/svg/1394/1394448.svg"
+              />
+              <Atom.Heading xxl heavy>
+                The Cerebro Network
+              </Atom.Heading>
+              <Atom.Paragraph>
+                Quisque velit elit, mollis vitae risus at, fermentum cursus
+                erat. Integer pulvinar lobortis diam eget feugiat.
+              </Atom.Paragraph>
+              <ul>
+                <li>Dynamic Search</li>
+                <li>Targetted Results</li>
+                <li>Actionable Next Steps</li>
+              </ul>
+              <Atom.Paragraph sx={{fontSize: 0}}>
+                Quisque velit elit, mollis vitae risus at, fermentum cursus
+                erat. Integer pulvinar lobortis diam eget feugiat. Vestibulum
+                ante ipsum primis.
+              </Atom.Paragraph>
+            </Atom.Box>
+
+            <Atom.Flex>
+              <Atom.Button>Developers</Atom.Button>
+              <Atom.Button sx={{ml: 3}}>Businesses</Atom.Button>
+            </Atom.Flex>
+          </Atom.Flex>
+        </Atom.Flex>
+      </Atom.Container>
+    </Atom.Flex>
+  );
+};
+
+const Preview = props => {
+  return (
+    <Atom.Flex sx={{bg: 'paper', color: 'text', py: 3, pb: 6}}>
+      <Atom.Container>
+        <Atom.Box>
+          <Atom.Container sx={{my: 5}}>
+            <Atom.Flex center column sx={{my: 2}}>
+              <Atom.Image
+                maxWidth={90}
+                src="https://image.flaticon.com/icons/svg/1161/1161388.svg"
+                sx={{
+                  my: 4,
+                }}
+              />
+              <Atom.Heading xxl heavy>
+                A Network of Developers at Your Disposal
+              </Atom.Heading>
+              <Atom.Heading md thin>
+                Ask for what you need and we'll use the latest in decentralized
+                and machine learning to bring you the perfect match.
+              </Atom.Heading>
+            </Atom.Flex>
+            <Slides items={items} />
+          </Atom.Container>
+        </Atom.Box>
+      </Atom.Container>
+    </Atom.Flex>
+  );
+};

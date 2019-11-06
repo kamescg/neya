@@ -162,12 +162,15 @@ var _default = (_ref2) => {
   return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(LabelMenu, {
     label: label
   }), _react.default.createElement(_designSystemAtoms.Flex, {
-    flexDirection: props.direction || 'row',
-    sx: props.sxMenu
+    sx: _objectSpread({}, props.sxMenu, {
+      flexDirection: props.direction || 'row'
+    })
   }, Array.isArray(items) && items.length > 0 && items.map((item, index) => _react.default.createElement(MenuItem, _extends({
     expanded: props.expanded,
     key: index,
-    flexDirection: props.direction || 'row'
+    sx: {
+      flexDirection: props.direction || 'row'
+    }
   }, item, props)))));
 };
 

@@ -15,7 +15,7 @@ export default () =>
 <Site sx={{ bg: 'paper', color: 'text', minHeight: '100vh' }} sxMain={{ alignItems: 'center', justifyContent: 'center' }}>
   <Atom.Container sx={{maxWidth: [1,1,780, 780]}}>
     <Atom.Box sx={{py: 3, textAlign: 'center'}}>
-      <Atom.Heading giga>3Box Extensions Setup</Atom.Heading>
+      <Atom.Heading giga>cerebro Setup</Atom.Heading>
       <Atom.Span tag sx={{p:3}}>Under Construction</Atom.Span>
       <CodeHighlight>
         git clone git@github.com:KamesCG/3box-extensions.git

@@ -130,13 +130,18 @@ MenuItem.defaultProps = {
 export default ({ items, label, ...props }) =>
   <>
     <LabelMenu label={label} />
-    <Flex flexDirection={props.direction || 'row'} sx={props.sxMenu} >
+    <Flex sx={{
+              ...props.sxMenu,
+              flexDirection:props.direction || 'row'
+            }}  >
       {Array.isArray(items) && items.length > 0 &&
         items.map((item, index) =>
           <MenuItem
             expanded={props.expanded}
             key={index}
-            flexDirection={props.direction || 'row'}
+            sx={{
+              flexDirection:props.direction || 'row'
+            }}
             {...item}
             {...props}
           />)}

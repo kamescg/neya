@@ -13,8 +13,7 @@ export const ProfileIdentity = props => (
 
 const ProfileIdentityView = ({first, middle, last, sx, sxFirst, sxMiddle, sxLast, ...props}) =>
 (
-<Atom.Heading sx={{sx}} {...props}>
-  {console.log(props, 'ProfileIdentityView')}
+<Atom.Heading sx={sx} {...props}>
   <Atom.Span className='first' sx={{...sxFirst}} >{first}</Atom.Span>
   <Atom.Span className='middle' sx={{mx: 1, ...sxMiddle}}>{middle}</Atom.Span>
   <Atom.Span className='last' sx={{...sxLast}}>{last}</Atom.Span>

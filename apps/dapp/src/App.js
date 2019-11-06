@@ -14,14 +14,21 @@ import Providers from './providersWithLocation'
 import {
 	Home,
 	Profile,
+	Search
 } from './pages'
+
+import DeveloperProfile from './pages/DeveloperProfile'
 import Content from './content'
+
+console.log(Search, 'SearchSearch')
 
 /* --- Component --- */
 export default () =>
 <Providers>
 	<Router width='100%'>
 		<Home path='/' />
+		<Search path='/search' />
+		<DeveloperProfile path='/developer' />
 		<Profile path='/profile' />
 		<Content path='/*' /> 
 	</Router>

@@ -20,6 +20,7 @@ export const BackgroundImage = ({ sx,src, opacity, ratio, children, ...props }) 
         backgroundImage: `url(${src})`,
         position: 'absolute',
         zIndex: 0,
+        ...sx
       }} />
   </div>
   

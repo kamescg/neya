@@ -32,7 +32,9 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
+    "@emotion/styled": "^10.0.23",
     "@styled-system/color": "^5.1.2",
+    "@styled-system/css": "^5.0.23",
     "@styled-system/should-forward-prop": "^5.1.2",
     "@styled-system/space": "^5.1.2",
     "idx": "^2.5.6",

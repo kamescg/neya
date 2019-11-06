@@ -1,17 +1,17 @@
 "use strict";
 
-var _interopRequireDefault = require("/Users/admin/Documents/GitHub/opensource/3box-extensions/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/interopRequireDefault");
+var _interopRequireDefault = require("/Users/admin/Documents/GitHub/opensource/cerebro/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.ProfileIdentity = void 0;
 
-var _extends2 = _interopRequireDefault(require("/Users/admin/Documents/GitHub/opensource/3box-extensions/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/extends"));
+var _extends2 = _interopRequireDefault(require("/Users/admin/Documents/GitHub/opensource/cerebro/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/extends"));
 
-var _defineProperty2 = _interopRequireDefault(require("/Users/admin/Documents/GitHub/opensource/3box-extensions/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/defineProperty"));
+var _defineProperty2 = _interopRequireDefault(require("/Users/admin/Documents/GitHub/opensource/cerebro/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/defineProperty"));
 
-var _objectWithoutProperties2 = _interopRequireDefault(require("/Users/admin/Documents/GitHub/opensource/3box-extensions/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties"));
+var _objectWithoutProperties2 = _interopRequireDefault(require("/Users/admin/Documents/GitHub/opensource/cerebro/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties"));
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -42,10 +42,8 @@ var ProfileIdentityView = function ProfileIdentityView(_ref) {
       sxLast = _ref.sxLast,
       props = (0, _objectWithoutProperties2["default"])(_ref, ["first", "middle", "last", "sx", "sxFirst", "sxMiddle", "sxLast"]);
   return _react["default"].createElement(Atom.Heading, (0, _extends2["default"])({
-    sx: {
-      sx: sx
-    }
-  }, props), console.log(props, 'ProfileIdentityView'), _react["default"].createElement(Atom.Span, {
+    sx: sx
+  }, props), _react["default"].createElement(Atom.Span, {
     className: "first",
     sx: _objectSpread({}, sxFirst)
   }, first), _react["default"].createElement(Atom.Span, {

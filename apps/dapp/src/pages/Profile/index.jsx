@@ -1,5 +1,5 @@
 import { Site } from 'templates'
-import { ProfileCard, ProfileCardVanity, ProfileCardShowcase } from '3box-ui-profiles'
+import { ProfileCardVanity, ProfileCardShowcase } from '3box-ui-profiles'
 import { 
   ProfileIdentityName,
   ProfileIdentityDetails,

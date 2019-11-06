@@ -1,5 +1,5 @@
 module.exports = {
-  siteName: '3Box Extensions',
+  siteName: 'cerebro',
   contact: {
     email: 'info@kamescg.com',
     twitter: '@kamescg',

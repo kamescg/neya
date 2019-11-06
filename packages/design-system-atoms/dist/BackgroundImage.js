@@ -36,7 +36,7 @@ var BackgroundImage = (_ref) => {
       zIndex: 0
     }, sx)
   }, (0, _themeUi.jsx)("div", {
-    sx: {
+    sx: _objectSpread({
       variant: 'layout.fill',
       paddingBottom: (ratio || 3 / 4) * 100 + '%',
       backgroundRepeat: 'no-repeat',
@@ -45,7 +45,7 @@ var BackgroundImage = (_ref) => {
       backgroundImage: "url(".concat(src, ")"),
       position: 'absolute',
       zIndex: 0
-    }
+    }, sx)
   }));
 };
 

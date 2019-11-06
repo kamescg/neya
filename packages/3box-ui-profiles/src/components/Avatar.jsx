@@ -8,9 +8,9 @@ import {BoxInject} from '3box-ui-state'
 import {ProfileImage} from './ProfileImage'
 
 /* --- Component --- */
-const AvatarView = ({ box, children, ...props }) => 
+const AvatarView = ({ sx, ...props }) => 
 <>
-  <ProfileImage opacity={1}/> 
+  <ProfileImage sx={sx} opacity={1}/> 
 </>
 
 export const Avatar = props =><BoxInject><AvatarView {...props} /></BoxInject>

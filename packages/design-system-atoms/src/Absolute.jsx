@@ -1,7 +1,7 @@
 import React from 'react'
 import Box from './Box'
 
-export const Absolute = React.forwardRef(({ as, sx, children, ...props }, ref) => (
+export const Absolute = React.forwardRef((props, ref) => (
   <Box
     ref={ref}
     {...props}

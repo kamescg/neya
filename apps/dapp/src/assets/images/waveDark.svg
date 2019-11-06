@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2354px" height="595px" viewBox="0 0 2354 595" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(0.000000, -518.000000)">
+            <g id="wave" transform="translate(0.000000, 556.000000)" fill="#383838" fill-rule="nonzero">
+                <path d="M2354,0 L2354,557 L0,557 C132.122451,471.184449 350.759602,441.144 656.011472,466.928719 C1130.09203,506.932584 1293.21975,455.263011 1538.86149,335.55182 C1803.00637,206.778427 1870.31781,27.0864719 2354,0 Z" id="Path"></path>
+            </g>
+            <circle id="Oval" stroke="#979797" fill="#2D74EB" cx="1578" cy="887" r="24.5"></circle>
+            <circle id="Oval" stroke="#979797" fill="#2D74EB" cx="490" cy="1021" r="21.5"></circle>
+            <circle id="Oval" stroke="#979797" fill="#2D74EB" transform="translate(2099.000000, 576.000000) scale(-1, 1) translate(-2099.000000, -576.000000) " cx="2099" cy="576" r="57.5"></circle>
+        </g>
+    </g>
+</svg>

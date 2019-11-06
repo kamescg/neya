@@ -33,6 +33,12 @@ Object.defineProperty(exports, "CodeCard", {
     return _CodeCard.CodeCard;
   }
 });
+Object.defineProperty(exports, "Slides", {
+  enumerable: true,
+  get: function get() {
+    return _Slides.Slides;
+  }
+});
 Object.defineProperty(exports, "Menu", {
   enumerable: true,
   get: function get() {
@@ -61,6 +67,8 @@ var _Markdown = _interopRequireDefault(require("./Markdown"));
 var _CodeHighlight = require("./CodeHighlight");
 
 var _CodeCard = require("./CodeCard");
+
+var _Slides = require("./Slides");
 
 var _Menu = _interopRequireDefault(require("./Menu"));
 

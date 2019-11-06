@@ -291,6 +291,7 @@ module.exports = function (webpackEnv) {
         'did': '3box-ui-state',
         'cms': '3box-ui-system',
         '3box-system': '3box-system',
+        assets: path.resolve(__dirname, '../src/assets'),
         content: path.resolve(__dirname, '../src/content'),
         helpers: path.resolve(__dirname, '../src/helpers'),
         schema: path.resolve(__dirname, '../src/schema'),
