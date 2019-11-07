@@ -26,12 +26,13 @@ var useOpenBoxEffect = (state, dispatch) => {
             var list = yield state.static.listSpaces(state.address);
             var verified = yield state.static.getVerifiedAccounts(profile);
             var spaces = {};
+            console.log(state, 'coool state');
             list.forEach(e => {
               spaces[e] = undefined;
-            }); // Create empty space objects list. 
+            }); // Create empty space objects list.
 
             dispatch({
-              type: "OPEN_SUCCESS",
+              type: 'OPEN_SUCCESS',
               profile,
               instance,
               spaces,
@@ -49,7 +50,7 @@ var useOpenBoxEffect = (state, dispatch) => {
       }
     } catch (error) {
       dispatch({
-        type: "OPEN_FAILURE",
+        type: 'OPEN_FAILURE',
         err: error
       });
       setDispatched(false);

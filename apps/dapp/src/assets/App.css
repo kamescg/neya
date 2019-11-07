@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu:300,400,500&display=swap');
 * {
   box-sizing: border-box;
-  transition: box-shadow .2s;
+  transition: box-shadow 0.2s;
+}
+
+#portal {
 }
 
 html {
@@ -66,7 +69,7 @@ li {
 }
 
 .react-tiny-popover-container {
-  z-index: 1000
+  z-index: 1000;
 }
 
 .alert-enter {
@@ -138,7 +141,7 @@ li {
   opacity: 0;
 }
 
-.fade-enter  {
+.fade-enter {
   opacity: 0;
   z-index: 1;
 }
@@ -155,13 +158,13 @@ li {
   transition: all 250ms ease-in;
 }
 
-.fade-exit  {
+.fade-exit {
   transform: translateY(30px);
   z-index: 1;
 }
 
 .fade-enter.fade-exit-active {
-  opacity: .4;
+  opacity: 0.4;
   transform: scale(0.9) translateY(9);
   right: 0px;
   transition: opacity 750ms ease-in;

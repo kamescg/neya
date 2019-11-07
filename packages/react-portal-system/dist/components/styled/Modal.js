@@ -51,22 +51,26 @@ var ModalActions = (_ref) => {
       setIsAnimating(true);
     }
   }, [isOpening, isAnimating]);
-  return _react.default.createElement(_react.default.Fragment, null, !isOpening ? null : _react.default.createElement(_designSystemAtoms.Flex, _extends({
+  var styles = {
+    container: {
+      position: 'fixed',
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0
+    }
+  };
+  return _react.default.createElement(_react.default.Fragment, null, !isOpening ? null : _react.default.createElement(_designSystemAtoms.Flex, {
     center: true,
     column: true,
-    position: "fixed",
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    variant: variant
-  }, styled), _react.default.createElement("span", {
+    sx: styles.container
+  }, _react.default.createElement("span", {
     onClick: () => closeHandler()
   }, _react.default.createElement(_designSystemAtoms.BackgroundGradient, {
     bg: "black",
     fixed: true,
     absolute: false,
-    opacity: .2
+    opacity: 0.2
   })), _react.default.createElement(_designSystemAtoms.Box, _extends({
     variant: variantInner
   }, props.styledInner), label && _react.default.createElement(_designSystemAtoms.Flex, _extends({

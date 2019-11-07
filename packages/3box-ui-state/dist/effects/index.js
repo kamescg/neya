@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "useAddExtension", {
+  enumerable: true,
+  get: function get() {
+    return _useAddExtension.default;
+  }
+});
 Object.defineProperty(exports, "useAutoEnableEffect", {
   enumerable: true,
   get: function get() {
@@ -123,6 +129,8 @@ Object.defineProperty(exports, "useThreadPostEffect", {
     return _useThreadPostEffect.default;
   }
 });
+
+var _useAddExtension = _interopRequireDefault(require("./useAddExtension"));
 
 var _useAutoEnableEffect = _interopRequireDefault(require("./useAutoEnableEffect"));
 

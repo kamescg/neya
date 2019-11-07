@@ -17,10 +17,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var _default = (state, action) => {
   switch (action.type) {
+    case 'EXTENSION_ADD_REQUEST':
+      return (0, _dotPropImmutableChain.default)(state).set("store.extensions", [...state.store.extensions, action]).value();
+
+    case 'EXTENSION_ADD_SUCCESS':
+      return _dotPropImmutableChain.default.merge(state, "extensions.".concat(action.id), action.payload);
+
+    case 'EXTENSION_ADD_FAILURE':
+      return (0, _dotPropImmutableChain.default)(state).set("store.extensions", []).value();
+
+    case 'LISTENER_ADD_REQUEST':
+      return _dotPropImmutableChain.default.merge(state, 'listeners', [action.payload]);
+
+    case 'UPDATE_WALLET_CONNECT_INSTANCE':
+      return _dotPropImmutableChain.default.merge(state, "extensions.walletconnect.instance", action.payload);
+    // return dot.set(state, 'extensions', action.payload);
+
+    case 'WALLET_CONNECT_ON_CONNECT':
+      return _dotPropImmutableChain.default.set(state, 'extensions', action.payload);
+
     /* ======================= */
 
     /* Initilization
     /* ======================= */
+
     case 'ENABLE_REQUEST':
       return _dotPropImmutableChain.default.set(state, 'isEnableRequested', true);
 

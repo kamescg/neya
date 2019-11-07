@@ -1,6 +1,7 @@
 /* --- Global --- */
 import {Link} from '@reach/router';
-import {ColorMode} from 'core';
+import {ColorMode, WalletConnectLogin} from 'core';
+import {Login} from '3box-walletconnect-sync';
 
 export default props => (
   <Atom.Flex alignCenter between sx={{variant: 'regions.header'}}>
@@ -31,16 +32,20 @@ export default props => (
           }}
           items={[
             {
-              label: 'Search',
-              to: '/search',
+              label: 'Assistant',
+              to: '/chat',
             },
             {
               label: 'Profiles',
               to: '/developer',
             },
             {
-              label: 'AI Chat',
-              to: '/chat',
+              label: 'Search',
+              to: '/search',
+            },
+            {
+              label: 'Authentication',
+              to: '/authentication',
             },
           ]}
         />
@@ -68,6 +73,8 @@ export default props => (
           },
         ]}
       />
+      {/* <WalletConnectLogin /> */}
+      <Login />
       <ColorMode />
     </Atom.Flex>
   </Atom.Flex>

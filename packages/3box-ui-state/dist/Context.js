@@ -22,12 +22,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Context = (0, _react.createContext)({
   // Authentiation data storage.
   '@': {},
+  extensions: {},
   auth: {
     instance: undefined,
     spaces: {},
     threads: {}
   },
   // Register onUpdate (thread listening) requests.
+  listeners: {},
   listening: {},
   // Middleware for requests to 3Box.
   requests: [],
@@ -41,6 +43,7 @@ var Context = (0, _react.createContext)({
     // Insert Item from Storage (Space) index (key)
     listens: [],
     // Listen for thread updates on callback.
+    extensions: [],
     gets: [],
     open: {},
     posts: [],

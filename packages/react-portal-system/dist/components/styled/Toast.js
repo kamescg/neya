@@ -11,6 +11,8 @@ var _designSystemAtoms = require("@horizin/design-system-atoms");
 
 var _reactTransitionGroup = require("react-transition-group");
 
+var _uiCompose = require("@horizin/ui-compose");
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -92,20 +94,21 @@ var ToastActions = (_ref) => {
   }, label)), _react.default.createElement(_designSystemAtoms.Span, {
     xxs: true,
     heavy: true,
-    effects: ['pointer'],
-    p: 2,
+    pointer: true,
     onClick: actionHandler
-  }, "X")), content && _react.default.createElement(_designSystemAtoms.Box, {
+  }, "x")), content && _react.default.createElement(_designSystemAtoms.Box, {
     sx: {
       bg: 'white',
-      borderTop: '1px solid',
-      borderColor: 'shade',
+      borderColor: 'smoke',
+      borderTopWidth: 1,
+      borderTopStyle: 'solid',
+      // borderColor: 'shade',
       borderRadius: '0 0 5px 5px',
       boxShadow: 0,
       p: 2
     },
     onClick: closeOnClick ? actionHandler : null
-  }, content && _react.default.isValidElement(content) ? _react.default.cloneElement(content) : content)));
+  }, (0, _uiCompose.Component)(content))));
 };
 
 ToastActions.defaultProps = {

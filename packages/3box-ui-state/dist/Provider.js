@@ -29,6 +29,7 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+/* --- Provider Component --- */
 var Provider = (_ref) => {
   var {
     children
@@ -38,6 +39,7 @@ var Provider = (_ref) => {
   var initialState = (0, _react.useContext)(_Context.default);
   var [state, dispatch] = (0, _react.useReducer)(_reducer.default, initialState);
   console.log(state, 'Box Provider');
+  (0, _effects.useAddExtension)(state, dispatch, props.extensions[0]);
   (0, _effects.useAutoEnableEffect)(state, dispatch);
   (0, _effects.useAutoLoginEffect)(state, dispatch);
   (0, _effects.useAutoRequestProfileEffect)(state, dispatch);

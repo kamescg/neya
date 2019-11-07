@@ -25,6 +25,7 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+/* --- Component --- */
 var StorageRender = (_ref) => {
   var {
     box
@@ -33,7 +34,6 @@ var StorageRender = (_ref) => {
 
   var storage = _boxUiState.Effects.useStorageRetrieveEffect(box, props);
 
-  console.log(storage, 'storagestoragestorage');
   return !storage.data ? null : props.isList ? _react.default.createElement(_uiCompose.ListObjectValues, {
     data: storage.data,
     pass: props.pass,

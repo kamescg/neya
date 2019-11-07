@@ -1,0 +1,18 @@
+.rsc-ts-image-container {
+  width: 65px;
+}
+
+.rsc-container {
+  width: 700px;
+}
+.rsc-header {
+}
+.rsc-content {
+}
+.rsc-footer {
+}
+.rsc-ts-image {
+  height: 32px;
+  min-width: 32px;
+  width: 32px;
+}

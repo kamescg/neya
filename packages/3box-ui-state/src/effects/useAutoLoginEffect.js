@@ -6,21 +6,21 @@
  */
 
 /* --- Global --- */
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 /* --- Component --- */
 const useAutoLogin = (state, dispatch) => {
-  const [dispatched, setDispatched] = useState()
+  const [dispatched, setDispatched] = useState();
 
   useEffect(() => {
     if (state.isLoginAuto && state.address) {
-      dispatch({ type: 'OPEN_REQUEST' })
-      setDispatched(true)
+      dispatch({ type: 'OPEN_REQUEST' });
+      setDispatched(true);
     }
-  }, [state.isLoginAuto, state.address])
+  }, [state.isLoginAuto, state.address]);
 
-  return dispatched
-}
+  return dispatched;
+};
 
 /* --- Export --- */
-export default useAutoLogin
+export default useAutoLogin;

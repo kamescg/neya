@@ -1,4 +1,3 @@
-
 /**
  * @function Application
  * @version 0.0.1
@@ -8,28 +7,25 @@
 /* --- Local --- */
 import './assets/App.css';
 import './assets/index.css';
-import { Router } from '@reach/router'
-import Providers from './providersWithLocation'
+import {Router} from '@reach/router';
+import Providers from './providers';
 
-import {
-	Home,
-	Profile,
-	Search
-} from './pages'
+import {Home, Profile, Search, Chat, Authentication} from './pages';
 
-import DeveloperProfile from './pages/DeveloperProfile'
-import Content from './content'
-
-console.log(Search, 'SearchSearch')
+import DeveloperProfile from './pages/DeveloperProfile';
+import Content from './content';
 
 /* --- Component --- */
-export default () =>
-<Providers>
-	<Router width='100%'>
-		<Home path='/' />
-		<Search path='/search' />
-		<DeveloperProfile path='/developer' />
-		<Profile path='/profile' />
-		<Content path='/*' /> 
-	</Router>
-</Providers>
+export default () => (
+	<Providers>
+		<Router width="100%">
+			<Home path="/" />
+			<Chat path="/chat" />
+			<Search path="/search" />
+			<Authentication path="/authentication" />
+			<DeveloperProfile path="/developer" />
+			<Profile path="/profile" />
+			<Content path="/*" />
+		</Router>
+	</Providers>
+);

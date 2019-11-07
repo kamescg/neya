@@ -10,12 +10,14 @@ import box from '3box';
 const Context = createContext({
   // Authentiation data storage.
   '@': {},
+  extensions: {},
   auth: {
     instance: undefined,
     spaces: {},
     threads: {}
   },
   // Register onUpdate (thread listening) requests.
+  listeners: {},
   listening: {},
   // Middleware for requests to 3Box.
   requests: [],
@@ -25,6 +27,7 @@ const Context = createContext({
     deletes: [], // Delete Item from Storage (Space) index (key)
     inserts: [], // Insert Item from Storage (Space) index (key)
     listens: [], // Listen for thread updates on callback.
+    extensions: [],
     gets: [],
     open: {},
     posts: [],
