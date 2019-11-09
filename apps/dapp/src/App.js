@@ -10,7 +10,7 @@ import './assets/index.css';
 import {Router} from '@reach/router';
 import Providers from './providers';
 
-import {Home, Profile, Search, Chat, Authentication} from './pages';
+import {Home, Dashboard, Profile, Search, Chat, Authentication} from './pages';
 
 import DeveloperProfile from './pages/DeveloperProfile';
 import Content from './content';
@@ -19,7 +19,7 @@ import Content from './content';
 export default () => (
 	<Providers>
 		<Router width="100%">
-			<Home path="/" />
+			<Dashboard path="/" />
 			<Chat path="/chat" />
 			<Search path="/search" />
 			<Authentication path="/authentication" />

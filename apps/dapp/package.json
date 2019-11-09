@@ -29,6 +29,8 @@
     "@horizin/ui-compose": "^0.0.1",
     "@reach/router": "^1.2.1",
     "@svgr/webpack": "4.1.0",
+    "bounties-ui-system": "^0.0.1",
+    "formatic-system": "^0.0.1",
     "add": "^2.0.6",
     "draft-js": "^0.11.1",
     "draftjs-to-markdown": "^0.5.1",

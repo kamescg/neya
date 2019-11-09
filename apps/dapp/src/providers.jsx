@@ -14,7 +14,8 @@ export default props => {
   return (
     <ThemeProvider theme={theme}>
       <PortalProvider>
-        <BoxProvider extensions={extensions}>
+        {/* <BoxProvider extensions={extensions}> */}
+        <BoxProvider>
           <PortalTree />
           {props.children}
         </BoxProvider>

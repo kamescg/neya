@@ -18,7 +18,6 @@ export const Slides = ({children, ...props}) => {
   const [width, setWidth] = useState(props.naturalSlideHeight);
   const [height, setHeight] = useState(props.naturalSlideHeight);
 
-  console.log(height, 'heightheightheightheight');
   return (
     <CarouselProvider
       naturalSlideWidth={width}

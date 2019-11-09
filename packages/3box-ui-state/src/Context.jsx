@@ -5,9 +5,11 @@
 /* --- Global --- */
 import { createContext } from 'react';
 import box from '3box';
+import { IdentityWallet } from '3box-walletconnect-sync';
 
 /* --- Components --- */
 const Context = createContext({
+  id: IdentityWallet,
   // Authentiation data storage.
   '@': {},
   extensions: {},

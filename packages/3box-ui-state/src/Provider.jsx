@@ -34,9 +34,10 @@ const Provider = ({ children, ...props }) => {
   const initialState = useContext(Context);
   const [state, dispatch] = useReducer(reducerActions, initialState);
 
-  console.log(state, 'Box Provider');
+  // console.log(state, 'Box Provider');
 
-  useAddExtension(state, dispatch, props.extensions[0]);
+  // Uncomment to add WalletConnect feature:flag:walletconnect
+  // useAddExtension(state, dispatch, props.extensions[0]);
 
   useAutoEnableEffect(state, dispatch);
   useAutoLoginEffect(state, dispatch);

@@ -12,7 +12,7 @@ import {
   ProfileIdentityDetails,
   ProfileIdentitySocial,
 } from 'components/profile';
-import {Profile} from 'templates';
+import {Profile, Dashboard} from 'templates';
 
 import Kudos from './Kudos';
 import Identity from './Identity';
@@ -109,7 +109,7 @@ const styles = {
 };
 
 const SearchView = props => (
-  <Profile>
+  <Dashboard>
     {/* Showcase */}
     <Atom.Flex sx={styles.cover}>
       <ProfileCover sx={{opacity: 0.52}} ratio={0.3} />
@@ -166,7 +166,7 @@ const SearchView = props => (
         <Activity />
       </Atom.Flex>
     </Atom.Flex>
-  </Profile>
+  </Dashboard>
 );
 
 const DeveloperSummary = props => {

@@ -62,7 +62,7 @@ var MenuItem = (_ref) => {
     alignContent: 'center',
     flexDirection: 'column',
     // p: '8px',
-    width: 15
+    width: 28
   });
   (0, _react.useEffect)(() => {
     if (props.direction) if (props.direction === 'column') setStyleChild(_objectSpread({}, sxChild, {
@@ -77,7 +77,9 @@ var MenuItem = (_ref) => {
     alignCenter: true,
     between: true,
     sx: _objectSpread({
-      alignContent: 'center'
+      alignContent: 'center',
+      flex: 1,
+      width: '100%'
     }, props.styledWrapper),
     active: props.styledWrapperActive
   }, props.image && _react.default.createElement(_designSystemAtoms.Span, {
@@ -85,11 +87,13 @@ var MenuItem = (_ref) => {
   }, props.image), _react.default.createElement(_designSystemAtoms.Flex, {
     alignCenter: true,
     between: true,
-    width: "100%"
+    sx: {
+      width: '100%'
+    }
   }, _react.default.createElement(WrapperLink, {
     to: to,
-    sx: _objectSpread({}, props.styledItemDefaults, {}, props.styled, {
-      opacity: .8,
+    sx: _objectSpread({}, props.styledItemDefaults, {}, props.sx, {
+      opacity: 0.8,
       '&.active': {
         opacity: 1
       },
@@ -97,12 +101,13 @@ var MenuItem = (_ref) => {
     }),
     active: props.active,
     getProps: _helpers.activateMenu
-  }, _react.default.createElement(_designSystemAtoms.Span, props.styledLabel, label)), children &&
+  }, _react.default.createElement(_designSystemAtoms.Span, props.styledLabel, label)), children
   /* Menu Item Children Toggle */
-  _react.default.createElement("span", {
+  && _react.default.createElement("span", {
     onClick: () => setOpen(!isOpen)
   }, _react.default.createElement(_designSystemAtoms.Span, {
     sx: {
+      fontSize: 0,
       cursor: 'pointer'
     },
     p: 2,
@@ -110,10 +115,10 @@ var MenuItem = (_ref) => {
     ml: "auto"
   }, _react.default.createElement(_designSystemAtoms.Span, {
     xxs: true,
-    opacity: .3,
+    opacity: 0.3,
     transform: isOpen ? 'rotate(90deg)' : ''
   }, isOpen ? '▶' : '▶'))))), isOpen && children && _react.default.createElement(_designSystemAtoms.Flex, {
-    flexDirection: props.flexDirection || 'row'
+    sx: props.sxChildren
   }, children.map((c, index) => _react.default.createElement(_designSystemAtoms.Flex, {
     column: true,
     key: index,
@@ -122,7 +127,7 @@ var MenuItem = (_ref) => {
     to: c.to,
     className: "child",
     sx: _objectSpread({}, props.styled, {
-      opacity: .8,
+      opacity: 0.8,
       '&.active': {
         opacity: 1
       }
@@ -143,7 +148,7 @@ MenuItem.defaultProps = {
   styledItemDefaults: {
     fontSize: 2,
     mx: 1,
-    opacity: .8
+    opacity: 0.8
   },
   styledItemDefaultsActive: {
     opacity: 1

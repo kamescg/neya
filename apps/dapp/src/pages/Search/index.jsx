@@ -1,7 +1,8 @@
-import {Search} from 'templates';
+import {Dashboard} from 'templates';
 import {FormSearch, FormSearchFilters} from 'forms';
-import {ProfileCardVanity, ProfileCardShowcase} from '3box-ui-profiles';
+import {ProfileCardVanity} from '3box-ui-profiles';
 import {Slides} from '@horizin/design-system-molecules';
+import {QueryBountyList} from 'bounties-ui-system';
 /* --- Styles --- */
 const styles = {
   userList: {
@@ -10,7 +11,7 @@ const styles = {
 };
 /* --- Component --- */
 const SearchView = props => (
-  <Search>
+  <Dashboard>
     <Atom.Box
       sx={{
         bg: 'blue',
@@ -27,8 +28,7 @@ const SearchView = props => (
         ratio={0.1}
       />
       <Atom.Heading xxl>
-        Developer Search -{' '}
-        <Atom.Span sx={{fontWeight: 300}}>Cerebro Connect</Atom.Span>
+        Job Search - <Atom.Span sx={{fontWeight: 300}}>ΞID Connect</Atom.Span>
       </Atom.Heading>
       <Atom.Flex alignCenter between sx={{flex: 1}}>
         <Atom.Flex sx={{flex: 4, py: 3}}>
@@ -37,18 +37,9 @@ const SearchView = props => (
       </Atom.Flex>
     </Atom.Box>
     <Atom.Box sx={styles.userList}>
-      <Atom.Flex>
-        <Atom.Flex column sx={{mx: 'unset', flex: 10, px: 4}}>
-          <OptimalResults />
-          <GoodResults />
-          <ImmediateResponse />
-        </Atom.Flex>
-        <Atom.Flex sx={{bg: 'paper', color: 'text', flex: 3, p: 4}}>
-          <FormSearchFilters />
-        </Atom.Flex>
-      </Atom.Flex>
+      <QueryBountyList sx={styles.joblist} />
     </Atom.Box>
-  </Search>
+  </Dashboard>
 );
 
 export default SearchView;

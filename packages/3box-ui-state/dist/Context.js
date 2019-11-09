@@ -9,6 +9,8 @@ var _react = require("react");
 
 var _box = _interopRequireDefault(require("3box"));
 
+var _boxWalletconnectSync = require("3box-walletconnect-sync");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
@@ -20,6 +22,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* --- Components --- */
 var Context = (0, _react.createContext)({
+  id: _boxWalletconnectSync.IdentityWallet,
   // Authentiation data storage.
   '@': {},
   extensions: {},

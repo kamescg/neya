@@ -35,7 +35,6 @@ var Slides = (_ref) => {
 
   var [width, setWidth] = (0, _react.useState)(props.naturalSlideHeight);
   var [height, setHeight] = (0, _react.useState)(props.naturalSlideHeight);
-  console.log(height, 'heightheightheightheight');
   return _react.default.createElement(_pureReactCarousel.CarouselProvider, {
     naturalSlideWidth: width,
     naturalSlideHeight: height,

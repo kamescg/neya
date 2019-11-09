@@ -82,7 +82,7 @@ const Features = props => {
           Connecting Developers w/ Jobs
         </Atom.Heading>
         <Atom.Heading md thin>
-          Cerebro Facilitates a 2-Sided Market between Talented Developers and
+          ΞID Facilitates a 2-Sided Market between Talented Developers and
           Businesses{' '}
         </Atom.Heading>
       </Atom.Flex>
@@ -217,7 +217,7 @@ const ApplicationPreview = props => {
                 src="https://image.flaticon.com/icons/svg/1394/1394448.svg"
               />
               <Atom.Heading xxl heavy>
-                The Cerebro Network
+                The ΞID Network
               </Atom.Heading>
               <Atom.Paragraph>
                 Quisque velit elit, mollis vitae risus at, fermentum cursus

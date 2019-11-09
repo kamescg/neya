@@ -1,4 +1,4 @@
-import {Site} from 'templates';
+import {Dashboard} from 'templates';
 import {Modal} from '@horizin/design-system-organisms';
 import {ChatBot} from '3box-ui-messaging';
 import {SendTransaction, SignClaim, Logout} from '3box-walletconnect-sync';
@@ -23,7 +23,7 @@ const styles = {
 };
 /* --- Component --- */
 const SearchView = props => (
-  <Site>
+  <Dashboard>
     <Atom.Flex align center sx={styles.container}>
       <Atom.BackgroundGradient gradient="blue" />
       <Atom.BackgroundImage
@@ -44,7 +44,7 @@ const SearchView = props => (
       </Atom.Box>
       {/* <ChatElements /> */}
     </Atom.Flex>
-  </Site>
+  </Dashboard>
 );
 
 export default SearchView;
