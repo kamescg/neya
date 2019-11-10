@@ -42,7 +42,7 @@ export const Connect = props => (
     }}
     onConnect={async provider => {
       const web3 = await new ethers.providers.Web3Provider(provider); // add provider to web3
-      window.web3Provider = web3;
+      window.web3Injected = web3;
     }}
     onClose={() => {
       console.log('Web3Connect Modal Closed'); // modal has closed

@@ -76,24 +76,25 @@ var loadContractIntoLibrary = (state, dispatch) => (_ref3) => {
 
 exports.loadContractIntoLibrary = loadContractIntoLibrary;
 
-var initContract = (state, dispatch) => (Contract, address) => {
+var initContract = (state, dispatch) => (props, address) => {
+  console.log(props, 'deltadeltadelta');
   var {
     wallet
   } = state;
 
-  if (wallet === undefined || Contract === undefined) {
+  if (wallet === undefined || props.abi === undefined) {
     return;
   }
 
   try {
-    var latestAddress = (0, _utilities.getLatestDeploymentAddress)(Contract);
-    var contract = new _ethers.ethers.Contract(latestAddress, Contract.abi, wallet);
+    // const latestAddress = getLatestDeploymentAddress(Contract);
+    var contract = new _ethers.ethers.Contract(props.address, props.abi, wallet);
     dispatch({
       type: _types.INIT_CONTRACT_REQUEST,
-      id: (0, _utilities.hashCode)(Contract),
+      id: props.contractName,
       payload: {
         contract,
-        address: address || latestAddress
+        address: props.address
       }
     });
   } catch (error) {

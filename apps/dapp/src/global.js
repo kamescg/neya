@@ -1,7 +1,7 @@
 module.exports = {
-  siteName: 'ΞID',
-  contact: {
-    email: 'info@kamescg.com',
-    twitter: '@kamescg',
-  }
-}
+	siteName: 'NΞYA',
+	contact: {
+		email: 'info@kamescg.com',
+		twitter: '@kamescg',
+	},
+};

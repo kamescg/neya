@@ -45,7 +45,10 @@ export default (state, action) => {
       };
 
     case 'SET_PROFILE':
-      return dot.set(state, `@.${state.address}.profile`, action.profile);
+      return dot(state)
+        .set(`@.${state.address}.profile`, action.profile)
+        .set(`@.${state.address}.spaces`, { public: {}, private: {} })
+        .value();
 
     /* ======================= */
     /* Static Requests
@@ -56,7 +59,8 @@ export default (state, action) => {
         .value();
     case 'GET_PROFILE_SUCCESS':
       return dot(state)
-        .set(`@.${action.address}.profile`, action.payload) // New path
+        .set(`@.${action.address}.profile`, action.payload)
+        .set(`@.${action.address}.spaces`, { public: {}, private: {} })
         .value();
 
     case 'GET_PROFILE_LIST_REQUEST':
@@ -72,7 +76,7 @@ export default (state, action) => {
       return (
         dot(state)
           // .set(`profiles.${action.address}`, action.payload) // Deprecated path
-          // .set(`data.profiles.${action.address}`, action.payload) // New path
+          // .set(`data.profiles.${action.address}`, action.payload)
           .set(`store.profiles`, [])
           .value()
           .value()
@@ -90,7 +94,7 @@ export default (state, action) => {
         .value();
     case 'OPEN_SUCCESS':
       return dot(state)
-        .set(`@.${state.address}.profile`, action.profile) // New path
+        .set(`@.${state.address}.profile`, action.profile)
         .set(`auth.verifications`, action.verifications)
         .set(`auth.spaces`, action.spaces)
         .set(`auth.instance`, action.instance)
@@ -125,8 +129,8 @@ export default (state, action) => {
       return dot(state)
         .set(`spaces.${action.space}.instance`, action.instance) // Deprecated path
         .set(`spaces.${action.space}.threads`, action.threads) // Deprecated path
-        .set(`auth.spaces.${action.space}.instance`, action.instance) // New path
-        .set(`auth.spaces.${action.space}.threads`, action.threads) // New path
+        .set(`auth.spaces.${action.space}.instance`, action.instance)
+        .set(`auth.spaces.${action.space}.threads`, action.threads)
         .set(`store.open`, [])
         .value();
 
@@ -144,7 +148,7 @@ export default (state, action) => {
           `data.spaces.${action.address}.${action.space}.${action.access}`,
           action.payload
         ) // Maybe path
-        .set(`@.${action.address}.spaces.${action.space}.${action.access}`, {}) // New path
+        .set(`@.${action.address}.spaces.${action.space}.${action.access}`, {})
         .set(`store.spaces`, [])
         .value();
     case 'GET_SPACE_FAILURE':

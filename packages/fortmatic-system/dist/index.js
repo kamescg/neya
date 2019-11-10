@@ -39,6 +39,12 @@ Object.defineProperty(exports, "DeployERC20", {
     return _DeployERC.DeployERC20;
   }
 });
+Object.defineProperty(exports, "DeployGnosisSafe", {
+  enumerable: true,
+  get: function get() {
+    return _DeployGnosisSafe.DeployGnosisSafe;
+  }
+});
 Object.defineProperty(exports, "TokenTransfer", {
   enumerable: true,
   get: function get() {
@@ -59,6 +65,8 @@ var _fortmatic = _interopRequireDefault(require("fortmatic"));
 var _SendTransaction = require("./components/SendTransaction");
 
 var _DeployERC = require("./components/DeployERC20");
+
+var _DeployGnosisSafe = require("./components/DeployGnosisSafe");
 
 var _TokenTransfer = require("./components/TokenTransfer");
 

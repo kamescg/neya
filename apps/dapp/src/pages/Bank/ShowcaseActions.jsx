@@ -26,7 +26,7 @@ const AccountManagementModal = props => {
   return (
     <Atom.Box card sx={modals.container}>
       <Atom.Heading xxl heavy>
-        Create Developer Profile
+        Manage Account
       </Atom.Heading>
       <Atom.Paragraph>
         Quisque pellentesque non lectus eleifend ornare. Nunc sed urna viverra,
@@ -41,7 +41,7 @@ const CurrencyConversionModal = props => {
   return (
     <Atom.Box card sx={modals.container}>
       <Atom.Heading xxl heavy>
-        Create Developer Profile
+        Convert Currency
       </Atom.Heading>
       <Atom.Paragraph>
         Quisque pellentesque non lectus eleifend ornare. Nunc sed urna viverra,

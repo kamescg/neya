@@ -1,8 +1,8 @@
 import coinbase from 'coinbase-commerce-node';
 const Checkout = coinbase.resources.Checkout;
 const Client = coinbase.Client;
-
-Client.init(env.process.COINBASE_API);
+const key = '';
+Client.init('ad2a2d82-c0e8-41b0-bd84-ff29b7522f43');
 export const createCharge = (req, res, next) => {
   var checkoutData = {
     name: req.body.name,

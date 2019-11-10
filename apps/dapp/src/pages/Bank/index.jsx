@@ -1,13 +1,6 @@
 import {Dashboard} from 'templates';
 import {Authenticate} from '3box-ui-system';
-import Token from 'contracts/ERC20';
-import GnosisSafe from 'contracts/safe/GnosisSafe';
-
-import {Connect, Deploy, Transfer} from 'components/tokens';
-import {DeployERC20, DeployGnosisSafe} from 'fortmatic-system';
-
 import {FormProfileDetails, FormProfileSocial} from 'forms';
-
 import {BasicAction} from './actions';
 import styles from './styles';
 import {ShowcaseActions} from './ShowcaseActions';
@@ -66,16 +59,6 @@ const Profile = props => (
         </Atom.Flex>
       </Atom.Box>
     </Atom.Container>
-
-    <Atom.Container>
-      <DeployERC20 />
-      <Connect
-        contract={Token}
-        contractName="DAI"
-        address="0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359"
-      />
-      <Deploy />
-    </Atom.Container>
   </Dashboard>
 );
 
@@ -127,7 +110,7 @@ const ProfileCreateModal = props => {
   return (
     <Atom.Box card sx={modals.container}>
       <Atom.Heading xxl heavy>
-        Create Developer Profile
+        Manage Account
       </Atom.Heading>
       <Atom.Paragraph>
         Quisque pellentesque non lectus eleifend ornare. Nunc sed urna viverra,

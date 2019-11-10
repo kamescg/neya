@@ -25,14 +25,15 @@ var useOpenSpaceEffect = (state, dispatch) => {
           function () {
             var _ref = _asyncToGenerator(function* () {
               var threads;
-              var space = yield state.instance.openSpace(selected.space);
+              console.log(selected, 'opening space');
+              var space = yield state.auth.instance.openSpace(selected.space);
 
               if (space.all) {
                 threads = yield space.subscribedThreads();
               }
 
               dispatch({
-                type: "OPEN_SPACE_SUCCESS",
+                type: 'OPEN_SPACE_SUCCESS',
                 instance: space,
                 space: selected.space,
                 threads
@@ -48,7 +49,7 @@ var useOpenSpaceEffect = (state, dispatch) => {
           runEffect();
         } catch (error) {
           dispatch({
-            type: "OPEN_SPACE_FAILURE",
+            type: 'OPEN_SPACE_FAILURE',
             payload: error,
             space: selected.space
           });

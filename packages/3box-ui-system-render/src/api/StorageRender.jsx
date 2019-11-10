@@ -1,5 +1,5 @@
 /* --- Global Dependencies --- */
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { BoxInject } from '3box-ui-state';
 
@@ -10,6 +10,15 @@ import { Effects } from '3box-ui-state';
 /* --- Component --- */
 const StorageRender = ({ box, ...props }) => {
   const storage = Effects.useStorageRetrieveEffect(box, props);
+  const space = Effects.useGetSpaceEffect(box, props);
+
+  const address = '0xaE11042b07C0B8F01Faa1915Df8167e5650FBc4d';
+  console.log(address, props.space, 'box.address, props.space');
+  useEffect(() => {
+    box.static.getSpace(address, props.space).then(res => {
+      console.log(res, 'spssccca');
+    });
+  }, [props.index]);
 
   return !storage.data ? null : props.isList ? (
     <ListObjectValues

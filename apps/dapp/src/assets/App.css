@@ -64,10 +64,19 @@ img {
   width: inherit;
 }
 
+body > img {
+  display: none;
+}
+
 li {
   margin-bottom: 8px;
 }
 
+button.coinbase-commerce-button {
+  padding: 20px !important;
+  height: unset !important;
+  font-size: 28px !important;
+}
 .overflowHidden {
   overflow: hidden;
 }

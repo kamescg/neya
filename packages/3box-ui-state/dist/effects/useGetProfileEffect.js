@@ -28,7 +28,7 @@ var useGetProfileEffect = (state, dispatch) => {
             profile.verifications = verified;
             profile.address = selected.address;
             dispatch({
-              type: "GET_PROFILE_SUCCESS",
+              type: 'GET_PROFILE_SUCCESS',
               address: selected.address,
               payload: profile,
               id: selected

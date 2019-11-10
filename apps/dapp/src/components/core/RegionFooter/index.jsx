@@ -21,7 +21,7 @@ const Footer = props => {
 
       <Atom.Flex alignCenter>
         <a href="https://github.com/kamescg">
-          <Atom.Span sx={{fontSize: 1}}>Built by Rapid</Atom.Span>
+          <Atom.Span sx={{fontSize: 1}}>Built by Kames</Atom.Span>
         </a>
       </Atom.Flex>
     </Atom.Flex>

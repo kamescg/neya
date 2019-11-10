@@ -141,7 +141,7 @@ var reducerActions = (state, action) => {
           contracts: []
         }),
         contracts: _objectSpread({}, state.contracts, {
-          [id]: _objectSpread({
+          [action.id]: _objectSpread({
             id,
             address
           }, contract)

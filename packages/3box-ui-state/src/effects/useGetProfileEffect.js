@@ -6,36 +6,36 @@
  */
 
 /* --- Global --- */
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 /* --- Component --- */
 const useGetProfileEffect = (state, dispatch) => {
-  const [dispatched, setDispatched] = useState()
+  const [dispatched, setDispatched] = useState();
 
   useEffect(() => {
     if (state.store && state.store.profiles) {
-      const selected = state.store.profiles[0]
+      const selected = state.store.profiles[0];
       if (selected) {
         const runEffect = async () => {
-          const profile = await state.static.getProfile(selected.address)
-          const verified = await state.static.getVerifiedAccounts(profile)
-          profile.verifications = verified
-          profile.address = selected.address
+          const profile = await state.static.getProfile(selected.address);
+          const verified = await state.static.getVerifiedAccounts(profile);
+          profile.verifications = verified;
+          profile.address = selected.address;
           dispatch({
-            type: "GET_PROFILE_SUCCESS",
+            type: 'GET_PROFILE_SUCCESS',
             address: selected.address,
             payload: profile,
             id: selected
-          })
-          setDispatched(true)
+          });
+          setDispatched(true);
         };
         runEffect();
       }
     }
-  }, [state.store.profiles])
+  }, [state.store.profiles]);
 
-  return dispatched
-}
+  return dispatched;
+};
 
 /* --- Export --- */
-export default useGetProfileEffect
+export default useGetProfileEffect;

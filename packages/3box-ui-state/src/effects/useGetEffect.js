@@ -6,56 +6,55 @@
  */
 
 /* --- Global --- */
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 /* --- Component --- */
 const useGetEffect = (state, dispatch) => {
-  const [dispatched, setDispatched] = useState()
+  const [dispatched, setDispatched] = useState();
 
   useEffect(() => {
     if (state.store.gets) {
-      const selected = state.store.gets[0]
+      const selected = state.store.gets[0];
       if (selected) {
         const runEffect = async () => {
-          const { space, access, key } = selected
+          const { space, access, key } = selected;
           try {
-            let read
+            let read;
             if (space) {
-              read = await state.auth.spaces[space].instance[access].get(key)
+              read = await state.auth.spaces[space].instance[access].get(key);
+              console.log(read, 'readreadread');
               dispatch({
                 type: 'GET_SUCCESS',
                 key,
                 access,
                 space,
                 payload: read
-              })
-              setDispatched(true)
+              });
+              setDispatched(true);
             } else {
-              read = await state.instance[access].get(key)
+              read = await state.instance[access].get(key);
               dispatch({
                 type: 'GET_SUCCESS',
                 key,
                 access,
                 payload: read
-              })
-              setDispatched(true)
+              });
+              setDispatched(true);
             }
           } catch (error) {
             dispatch({
               type: 'GET_FAILURE',
               payload: error
-            })
-            setDispatched(false)
+            });
+            setDispatched(false);
           }
-
-
-        }
+        };
         runEffect();
       }
     }
-  }, [state.store.gets])
-  return dispatched
-}
+  }, [state.store.gets]);
+  return dispatched;
+};
 
 /* --- Export --- */
-export default useGetEffect
+export default useGetEffect;

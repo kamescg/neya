@@ -31,15 +31,16 @@ var useSetEffect = (state, dispatch) => {
       switch (selected.type) {
         case 'SET_SINGLE_REQUEST':
           state.auth.instance[selected.access].set(selected.key, selected.value);
+          console.log(selected, 'set single');
           dispatch({
-            type: "SET_SINGLE_SUCCESS"
+            type: 'SET_SINGLE_SUCCESS'
           });
           break;
 
         case 'SET_MULTIPLE_REQUEST':
           state.auth.instance[selected.access].setMultiple(selected.keys, selected.inputs);
           dispatch({
-            type: "SET_MULTIPLE_SUCCESS"
+            type: 'SET_MULTIPLE_SUCCESS'
           });
           break;
 
@@ -68,8 +69,8 @@ var useSetEffect = (state, dispatch) => {
                       if (_data) {
                         /**
                          * IF : key
-                         * TRUE : Update object 
-                         * FALSE : Update array 
+                         * TRUE : Update object
+                         * FALSE : Update array
                          */
                         if (key) {
                           listUpdated = _objectSpread({}, _data, {
@@ -90,13 +91,13 @@ var useSetEffect = (state, dispatch) => {
 
                       var list = yield state.spaces[space].instance[access].set(append, listUpdated);
                       dispatch({
-                        type: "SET_SUCCESS",
+                        type: 'SET_SUCCESS',
                         payload: list
                       });
 
                       if (selected.update) {
                         dispatch({
-                          type: "GET_REQUEST",
+                          type: 'GET_REQUEST',
                           access,
                           key: selected.update,
                           space
@@ -105,12 +106,12 @@ var useSetEffect = (state, dispatch) => {
                     } else {
                       yield state.spaces[space].instance[access].setMultiple(keys, inputs);
                       dispatch({
-                        type: "SET_SUCCESS"
+                        type: 'SET_SUCCESS'
                       });
 
                       if (selected.update) {
                         dispatch({
-                          type: "GET_REQUEST",
+                          type: 'GET_REQUEST',
                           access,
                           key: selected.update,
                           space
@@ -127,7 +128,7 @@ var useSetEffect = (state, dispatch) => {
                         listUpdated = [inputs];
                       }
 
-                      Array.isArray(_data2) ? yield state.instance[access].set(append, listUpdated) : !override // todo set system for overriding data... add to backup space? 
+                      Array.isArray(_data2) ? yield state.instance[access].set(append, listUpdated) : !override // todo set system for overriding data... add to backup space?
                       ? yield state.instance[access].set(append, listUpdated) : null;
                     } else {
                       yield state.auth.instance[access].setMultiple(keys, inputs);
@@ -136,7 +137,7 @@ var useSetEffect = (state, dispatch) => {
                 } catch (error) {
                   console.log(error);
                   dispatch({
-                    type: "SET_FAILURE"
+                    type: 'SET_FAILURE'
                   });
                 }
               });
@@ -158,7 +159,7 @@ var useSetEffect = (state, dispatch) => {
             if (selected.key) data = _dotPropImmutableChain.default.merge(state.profile[selected.index], "".concat(selected.key), selected.input);else data = _dotPropImmutableChain.default.merge(state.profile, "".concat(selected.index), selected.input)[selected.index];
             state.instance[selected.access].set(selected.index, data);
             dispatch({
-              type: "SET_INSERT_SUCCESS",
+              type: 'SET_INSERT_SUCCESS',
               index: selected.index,
               key: selected.key,
               payload: data
@@ -166,7 +167,7 @@ var useSetEffect = (state, dispatch) => {
             setDispatched(true);
           } catch (error) {
             dispatch({
-              type: "SET_INSERT_FAILURE",
+              type: 'SET_INSERT_FAILURE',
               payload: error
             });
           }
@@ -178,15 +179,18 @@ var useSetEffect = (state, dispatch) => {
 
           try {
             if (selected.space) {
-              dataMarge = selected.delta ? (0, _dotPropImmutableChain.default)(state['@'][state.address].spaces[selected.space][selected.access]).merge("".concat(selected.key, ".").concat(selected.delta), selected.value).value()[selected.key] : (0, _dotPropImmutableChain.default)(state['@'][state.address].spaces[selected.space][selected.access]).merge("".concat(selected.key), selected.value).value()[selected.key];
+              if (state['@'][state.address].spaces) console.log(selected, 'selectedselectedselected');
+              dataMarge = selected.delta ? (0, _dotPropImmutableChain.default)(state['@'][state.address].spaces).merge("".concat(selected.space, ".").concat(selected.access, ".").concat(selected.key, ".").concat(selected.delta), selected.value).value()[selected.space][selected.access][selected.key] : (0, _dotPropImmutableChain.default)(state['@'][state.address].spaces[selected.space]).merge("".concat(selected.key), selected.value).value()[selected.key];
+              console.log(dataMarge, 'dataMargedataMarge');
               /**
-                * 3Box Set
-                * Access the local initialized instance of the SPACE and set data.
-                */
+               * 3Box Set
+               * Access the local initialized instance of the SPACE and set data.
+               */
 
+              console.log(state.auth.spaces[selected.space], 'uessss');
               state.auth.spaces[selected.space].instance[selected.access].set(selected.key, dataMarge).then(res => {
                 dispatch({
-                  type: "SET_MERGE_SUCCESS",
+                  type: 'SET_MERGE_SUCCESS',
                   access: selected.access,
                   key: selected.key,
                   space: selected.space,
@@ -201,9 +205,10 @@ var useSetEffect = (state, dispatch) => {
                * Access the local initialized instance of the PROFILE and set data.
                */
 
-              state.instance[selected.access].set(selected.key, dataMarge).then(res => {
+              console.log(selected, 'selectedselected');
+              state.auth.instance[selected.access].set(selected.key, dataMarge).then(res => {
                 dispatch({
-                  type: "SET_MERGE_SUCCESS",
+                  type: 'SET_MERGE_SUCCESS',
                   index: selected.key,
                   key: selected.key,
                   payload: dataMarge
@@ -214,7 +219,7 @@ var useSetEffect = (state, dispatch) => {
           } catch (error) {
             console.log(error);
             dispatch({
-              type: "SET_MERGE_FAILURE",
+              type: 'SET_MERGE_FAILURE',
               payload: error
             });
           }

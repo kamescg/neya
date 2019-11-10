@@ -178,25 +178,25 @@ const useSetEffect = (state, dispatch) => {
           let dataMarge;
           try {
             if (selected.space) {
+              if (state['@'][state.address].spaces)
+                console.log(selected, 'selectedselectedselected');
               dataMarge = selected.delta
-                ? dot(
-                    state['@'][state.address].spaces[selected.space][
-                      selected.access
-                    ]
-                  )
-                    .merge(`${selected.key}.${selected.delta}`, selected.value)
-                    .value()[selected.key]
-                : dot(
-                    state['@'][state.address].spaces[selected.space][
-                      selected.access
-                    ]
-                  )
+                ? dot(state['@'][state.address].spaces)
+                    .merge(
+                      `${selected.space}.${selected.access}.${selected.key}.${selected.delta}`,
+                      selected.value
+                    )
+                    .value()[selected.space][selected.access][selected.key]
+                : dot(state['@'][state.address].spaces[selected.space])
                     .merge(`${selected.key}`, selected.value)
                     .value()[selected.key];
+
+              console.log(dataMarge, 'dataMargedataMarge');
               /**
                * 3Box Set
                * Access the local initialized instance of the SPACE and set data.
                */
+              console.log(state.auth.spaces[selected.space], 'uessss');
               state.auth.spaces[selected.space].instance[selected.access]
                 .set(selected.key, dataMarge)
                 .then(res => {

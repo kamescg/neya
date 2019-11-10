@@ -13,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /**
  * @function useStorageRetrieveEffect
- * @description Retrieve data from an Ethereum profile. 
+ * @description Retrieve data from an Ethereum profile.
  * @param {Object} state
  * @param {Object} dispatch
  */
@@ -24,7 +24,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var useStorageRetrieveEffect = (state, props) => {
   var [data, setData] = (0, _react.useState)();
   var [address, setAddress] = (0, _react.useState)(props.address || state.address);
-  console.log(data, props.selector, 'stttooorage');
   (0, _react.useEffect)(() => {
     setAddress(state.address);
   }, [state.address]);

@@ -12,6 +12,7 @@ import Providers from './providers';
 
 import {
 	Bank,
+	Earn,
 	Home,
 	Create,
 	Dashboard,
@@ -28,15 +29,20 @@ import Content from './content';
 export default () => (
 	<Providers>
 		<Router width="100%">
-			<Dashboard path="/" />
-			<Home path="/home" />
-			<Create path="/create" />
+			<Home path="/" />
+			<Dashboard path="/dashboard" />
+
 			<Bank path="/bank" />
+			<Earn path="/earn" />
+			<Earn path="/gigs" />
+			<Earn path="/jobs" />
+			<Authentication path="/authentication" />
+
+			<Create path="/create" />
+
 			<Chat path="/chat" />
 			<Search path="/search" />
-			<Authentication path="/authentication" />
 			<DeveloperProfile path="/profile" />
-			<Profile path="/profile" />
 			<Content path="/*" />
 		</Router>
 	</Providers>

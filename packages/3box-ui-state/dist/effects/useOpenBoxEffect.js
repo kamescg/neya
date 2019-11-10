@@ -27,19 +27,22 @@ var useOpenBoxEffect = (state, dispatch) => {
         /*#__PURE__*/
         function () {
           var _ref = _asyncToGenerator(function* () {
-            // let fm = new Fortmatic(key);
-            // const web3Instance = new Web3(fm.getProvider());
-            console.log(window.web3Provider, 'window.web3Provider');
-            var instance = yield state.static.openBox(window.ethereum.selectedAddress, window.web3Provider);
+            var accounts = window.web3.currentProvider && window.web3.currentProvider.selectedAddress || window.web3._web3Provider.account;
+            var prd = window.web3Injected && window.web3Injected._web3Provider || window.web3.currentProvider;
+            console.log(prd, 'prdprd');
+            var instance = yield state.static.openBox(accounts, prd);
             var profile = yield state.static.getProfile(state.address);
             var list = yield state.static.listSpaces(state.address);
             var verified = yield state.static.getVerifiedAccounts(profile);
             var spaces = {};
-            console.log(state, 'coool state');
             list.forEach(e => {
               spaces[e] = undefined;
             }); // Create empty space objects list.
 
+            dispatch({
+              type: 'SET_ADDRESS',
+              address: accounts
+            });
             dispatch({
               type: 'OPEN_SUCCESS',
               profile,

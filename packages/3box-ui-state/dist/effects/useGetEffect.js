@@ -34,6 +34,7 @@ var useGetEffect = (state, dispatch) => {
 
               if (space) {
                 read = yield state.auth.spaces[space].instance[access].get(key);
+                console.log(read, 'readreadread');
                 dispatch({
                   type: 'GET_SUCCESS',
                   key,

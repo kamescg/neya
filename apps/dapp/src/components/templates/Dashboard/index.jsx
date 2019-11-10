@@ -36,7 +36,7 @@ const SiteTemplate = ({sx, sxMain, styled, children, ...props}) => {
         <Atom.Flex column sx={styles.aside}>
           <Atom.Flex center column>
             <Atom.Span>beta</Atom.Span>
-            <Molecule.Link to="/">
+            <Molecule.Link to="/dashboard">
               <Atom.Heading giga heavy>
                 NΞYA
               </Atom.Heading>

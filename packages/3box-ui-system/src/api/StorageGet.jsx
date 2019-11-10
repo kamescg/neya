@@ -5,12 +5,12 @@
  * @description Storage set: public and private 3Box profiles and spaces.
  */
 import React, { useEffect } from 'react';
-import { BoxInject } from '3box-ui-state'
-import { useStorageSetStatusEffect} from './effects'
+import { BoxInject } from '3box-ui-state';
+import { useStorageSetStatusEffect } from './effects';
 
 /* --- Component --- */
 const StorageSet = ({ box, ...props }) => {
-  const storageSet = useStorageSetStatusEffect(box, props)
+  const storageSet = useStorageSetStatusEffect(box, props);
 
   /**
    * @name triggerOnSetCallbackEffect
@@ -19,9 +19,9 @@ const StorageSet = ({ box, ...props }) => {
    */
   useEffect(() => {
     if (storageSet.complete) {
-      if(props.onSet) props.onSet(storageSet.complete)
+      if (props.onSet) props.onSet(storageSet.complete);
     }
-  }, [storageSet.complete])
+  }, [storageSet.complete]);
 
   /**
    * @name setSingleEffect
@@ -33,19 +33,21 @@ const StorageSet = ({ box, ...props }) => {
         access: props.access,
         key: props.index, // Top level key to set.
         space: props.space // If space is passed set data in space.
-      })
+      });
     }
-  }, [props.index])
+  }, [props.index]);
 
-  return null
-}
+  return null;
+};
 
 StorageSet.defaultProps = {
   access: 'public'
-}
+};
 
-StorageSet.propTypes = {
+StorageSet.propTypes = {};
 
-}
-
-export default props =><BoxInject><StorageSet {...props} /></BoxInject>
+export default props => (
+  <BoxInject>
+    <StorageSet {...props} />
+  </BoxInject>
+);

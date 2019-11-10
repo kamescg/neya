@@ -7,6 +7,8 @@ exports.Connect = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _web = _interopRequireDefault(require("web3"));
+
 var _web3connect = _interopRequireDefault(require("web3connect"));
 
 var _web3Provider = _interopRequireDefault(require("@walletconnect/web3-provider"));
@@ -72,7 +74,7 @@ var Connect = props => _react.default.createElement(_web3connect.default.Button,
     var _ref = _asyncToGenerator(function* (provider) {
       var web3 = yield new _ethers.ethers.providers.Web3Provider(provider); // add provider to web3
 
-      window.web3Provider = web3;
+      window.web3Injected = web3;
     });
 
     return function (_x) {

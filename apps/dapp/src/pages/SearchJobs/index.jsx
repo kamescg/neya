@@ -27,7 +27,7 @@ const SearchView = props => (
         ratio={0.1}
       />
       <Atom.Heading xxl>
-        Job Search - <Atom.Span sx={{fontWeight: 300}}>ΞID Connect</Atom.Span>
+        Job Search - <Atom.Span sx={{fontWeight: 300}}>NΞYA Connect</Atom.Span>
       </Atom.Heading>
       <Atom.Flex alignCenter between sx={{flex: 1}}>
         <Atom.Flex sx={{flex: 4, py: 3}}>

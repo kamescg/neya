@@ -1,11 +1,8 @@
 import {Dashboard} from 'templates';
 import {QueryBountyList} from 'bounties-ui-system';
 import {Authenticate} from '3box-ui-system';
-import {
-  FormProfileDetails,
-  FormProfileIdentity,
-  FormProfileSocial,
-} from 'forms';
+import {DeployERC20} from 'fortmatic-system';
+import {FormProfileDetails, FormProfileSocial} from 'forms';
 import {BasicAction} from './actions';
 import styles from './styles';
 
@@ -164,9 +161,9 @@ const ProfileCreateModal = props => {
         Create Developer Profile
       </Atom.Heading>
       <Atom.Paragraph>
-        Quisque pellentesque non lectus eleifend ornare. Nunc sed urna viverra,
-        finibus quam mattis, efficitur elit. Proin venenatis faucibus eros, ut
-        imperdiet eros tempus sed.
+        Create your decentralized developer profile today. Start earning
+        reputation, build your ecosystem credability and share your favorite
+        projects with followers.
       </Atom.Paragraph>
       <Atom.Heading>Login</Atom.Heading>
       <Authenticate display="avatar" />
@@ -186,11 +183,12 @@ const ProfileCreateBank = props => {
         Create Bank
       </Atom.Heading>
       <Atom.Paragraph>
-        Quisque pellentesque non lectus eleifend ornare. Nunc sed urna viverra,
-        finibus quam mattis, efficitur elit. Proin venenatis faucibus eros, ut
-        imperdiet eros tempus sed.
+        Are you ready to fully experience decentralized technologies? The Smart
+        Bank Wallet provides features to automate everyday trading tasks like
+        borrowing, lending and leveraging.
       </Atom.Paragraph>
-      <Atom.Button>Deploy Bank</Atom.Button>
+      {/* <Atom.Button>Deploy Bank</Atom.Button> */}
+      <DeployERC20 />
     </Atom.Box>
   );
 };
@@ -202,11 +200,12 @@ const ProfileCreateTeam = props => {
         Create Team
       </Atom.Heading>
       <Atom.Paragraph>
-        Quisque pellentesque non lectus eleifend ornare. Nunc sed urna viverra,
-        finibus quam mattis, efficitur elit. Proin venenatis faucibus eros, ut
-        imperdiet eros tempus sed.
+        Have an intersting Open Source project you're thinking about starting?
+        Launch a new team wallet designed and developed specifically to enable
+        developers to more easily manage funds on small projects.
       </Atom.Paragraph>
-      <Atom.Button>Deploy Team Bank</Atom.Button>
+      {/* <Atom.Button>Deploy Team Bank</Atom.Button> */}
+      <DeployERC20 />
     </Atom.Box>
   );
 };

@@ -58,7 +58,10 @@ var _default = (state, action) => {
       });
 
     case 'SET_PROFILE':
-      return _dotPropImmutableChain.default.set(state, "@.".concat(state.address, ".profile"), action.profile);
+      return (0, _dotPropImmutableChain.default)(state).set("@.".concat(state.address, ".profile"), action.profile).set("@.".concat(state.address, ".spaces"), {
+        public: {},
+        private: {}
+      }).value();
 
     /* ======================= */
 
@@ -69,8 +72,10 @@ var _default = (state, action) => {
       return (0, _dotPropImmutableChain.default)(state).set("store.profiles", [...state.store.profiles, action]).value();
 
     case 'GET_PROFILE_SUCCESS':
-      return (0, _dotPropImmutableChain.default)(state).set("@.".concat(action.address, ".profile"), action.payload) // New path
-      .value();
+      return (0, _dotPropImmutableChain.default)(state).set("@.".concat(action.address, ".profile"), action.payload).set("@.".concat(action.address, ".spaces"), {
+        public: {},
+        private: {}
+      }).value();
 
     case 'GET_PROFILE_LIST_REQUEST':
       return _objectSpread({}, state, {
@@ -83,7 +88,7 @@ var _default = (state, action) => {
 
     case 'GET_PROFILE_LIST_SUCCESS':
       return (0, _dotPropImmutableChain.default)(state) // .set(`profiles.${action.address}`, action.payload) // Deprecated path
-      // .set(`data.profiles.${action.address}`, action.payload) // New path
+      // .set(`data.profiles.${action.address}`, action.payload)
       .set("store.profiles", []).value().value();
 
     /* ======================= */
@@ -98,8 +103,7 @@ var _default = (state, action) => {
       return (0, _dotPropImmutableChain.default)(state).set("isLoggingIn", true).value();
 
     case 'OPEN_SUCCESS':
-      return (0, _dotPropImmutableChain.default)(state).set("@.".concat(state.address, ".profile"), action.profile) // New path
-      .set("auth.verifications", action.verifications).set("auth.spaces", action.spaces).set("auth.instance", action.instance).set("instance", action.instance).set("isLogginIn", false).set("isLoggedIn", true).value();
+      return (0, _dotPropImmutableChain.default)(state).set("@.".concat(state.address, ".profile"), action.profile).set("auth.verifications", action.verifications).set("auth.spaces", action.spaces).set("auth.instance", action.instance).set("instance", action.instance).set("isLogginIn", false).set("isLoggedIn", true).value();
 
     case 'OPEN_FAILURE':
       return state;
@@ -124,9 +128,7 @@ var _default = (state, action) => {
     case 'OPEN_SPACE_SUCCESS':
       return (0, _dotPropImmutableChain.default)(state).set("spaces.".concat(action.space, ".instance"), action.instance) // Deprecated path
       .set("spaces.".concat(action.space, ".threads"), action.threads) // Deprecated path
-      .set("auth.spaces.".concat(action.space, ".instance"), action.instance) // New path
-      .set("auth.spaces.".concat(action.space, ".threads"), action.threads) // New path
-      .set("store.open", []).value();
+      .set("auth.spaces.".concat(action.space, ".instance"), action.instance).set("auth.spaces.".concat(action.space, ".threads"), action.threads).set("store.open", []).value();
 
     /* ------------------ */
 
@@ -139,8 +141,7 @@ var _default = (state, action) => {
     case 'GET_SPACE_SUCCESS':
       return (0, _dotPropImmutableChain.default)(state).set("spaces.".concat(action.space, ".").concat(action.access), action.payload) // Deprecated path
       .set("data.spaces.".concat(action.address, ".").concat(action.space, ".").concat(action.access), action.payload) // Maybe path
-      .set("@.".concat(action.address, ".spaces.").concat(action.space, ".").concat(action.access), {}) // New path
-      .set("store.spaces", []).value();
+      .set("@.".concat(action.address, ".spaces.").concat(action.space, ".").concat(action.access), {}).set("store.spaces", []).value();
 
     case 'GET_SPACE_FAILURE':
       return (0, _dotPropImmutableChain.default)(state).set("store.spaces", []).value();

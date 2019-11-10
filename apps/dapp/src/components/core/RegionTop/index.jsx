@@ -46,7 +46,7 @@ export default props => (
     <Atom.Flex alignCenter>
       <Stats sx={{mr: 3}} />
       <Authenticate display="avatar" />
-      <Login display="avatar" />
+      {/* <Login display="avatar" /> */}
     </Atom.Flex>
   </Atom.Flex>
 );

@@ -52,8 +52,9 @@ var MenuItem = (_ref) => {
     alignContent: 'center',
     flexDirection: 'column',
     // p: '8px',
-    mr: 2 // width: 18
-
+    mr: 2,
+    height: 18,
+    width: 18
   });
   var [sxImageWrapperChild, setImageWrapperChild] = (0, _react.useState)({
     // bg: 'rgba(255,255,255,0.9)',
