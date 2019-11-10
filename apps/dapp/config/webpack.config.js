@@ -293,6 +293,7 @@ module.exports = function (webpackEnv) {
         '3box-system': '3box-system',
         assets: path.resolve(__dirname, '../src/assets'),
         content: path.resolve(__dirname, '../src/content'),
+        contracts: path.resolve(__dirname, '../src/contracts'),
         helpers: path.resolve(__dirname, '../src/helpers'),
         schema: path.resolve(__dirname, '../src/schema'),
         foundry: path.resolve(__dirname, '../src/foundry'),

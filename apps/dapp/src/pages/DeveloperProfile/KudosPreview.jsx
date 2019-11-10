@@ -1,5 +1,5 @@
 const Kudos = ({sx, ...props}) => (
-  <Atom.Box card sx={{bg: 'purple', ...sx}}>
+  <Atom.Box card sx={{...sx}}>
     <Atom.Heading lg heavy>
       Kudos
     </Atom.Heading>

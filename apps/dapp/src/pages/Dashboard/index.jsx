@@ -1,5 +1,11 @@
 import {Dashboard} from 'templates';
 import {QueryBountyList} from 'bounties-ui-system';
+import {Authenticate} from '3box-ui-system';
+import {
+  FormProfileDetails,
+  FormProfileIdentity,
+  FormProfileSocial,
+} from 'forms';
 import {BasicAction} from './actions';
 import styles from './styles';
 
@@ -23,6 +29,7 @@ const Profile = props => (
           title="Create Profile"
           subtitle="Start your decentralized identity developer profile and start earning money today."
           label="Create"
+          content={<ProfileCreateModal />}
           sx={actions.dev}
         />
         <BasicAction
@@ -30,6 +37,7 @@ const Profile = props => (
           subtitle="Deploy a personal bank to the blockchain. Simplify basic investing
           actions."
           label="Launch"
+          content={<ProfileCreateBank />}
           sx={actions.dev}
         />
         <BasicAction
@@ -37,6 +45,7 @@ const Profile = props => (
           subtitle="Launch team developer projects and start earning together as a
         collective."
           label="Start"
+          content={<ProfileCreateTeam />}
           sx={actions.dev}
         />
       </Atom.Flex>
@@ -135,5 +144,69 @@ const Statistic = props => {
         {props.value}
       </Atom.Heading>
     </Atom.Flex>
+  );
+};
+
+const modals = {
+  container: {
+    width: '100%',
+    maxWidth: 700,
+    maxHeight: 600,
+    overflow: 'auto',
+    p: 4,
+  },
+};
+
+const ProfileCreateModal = props => {
+  return (
+    <Atom.Box card sx={modals.container}>
+      <Atom.Heading xxl heavy>
+        Create Developer Profile
+      </Atom.Heading>
+      <Atom.Paragraph>
+        Quisque pellentesque non lectus eleifend ornare. Nunc sed urna viverra,
+        finibus quam mattis, efficitur elit. Proin venenatis faucibus eros, ut
+        imperdiet eros tempus sed.
+      </Atom.Paragraph>
+      <Atom.Heading>Login</Atom.Heading>
+      <Authenticate display="avatar" />
+      <Atom.Heading>Setup Person</Atom.Heading>
+      <FormProfileDetails />
+      <Atom.Heading>Add Details</Atom.Heading>
+      <FormProfileDetails />
+      <FormProfileSocial />
+    </Atom.Box>
+  );
+};
+
+const ProfileCreateBank = props => {
+  return (
+    <Atom.Box card sx={modals.container}>
+      <Atom.Heading xxl heavy>
+        Create Bank
+      </Atom.Heading>
+      <Atom.Paragraph>
+        Quisque pellentesque non lectus eleifend ornare. Nunc sed urna viverra,
+        finibus quam mattis, efficitur elit. Proin venenatis faucibus eros, ut
+        imperdiet eros tempus sed.
+      </Atom.Paragraph>
+      <Atom.Button>Deploy Bank</Atom.Button>
+    </Atom.Box>
+  );
+};
+
+const ProfileCreateTeam = props => {
+  return (
+    <Atom.Box card sx={modals.container}>
+      <Atom.Heading xxl heavy>
+        Create Team
+      </Atom.Heading>
+      <Atom.Paragraph>
+        Quisque pellentesque non lectus eleifend ornare. Nunc sed urna viverra,
+        finibus quam mattis, efficitur elit. Proin venenatis faucibus eros, ut
+        imperdiet eros tempus sed.
+      </Atom.Paragraph>
+      <Atom.Button>Deploy Team Bank</Atom.Button>
+    </Atom.Box>
   );
 };

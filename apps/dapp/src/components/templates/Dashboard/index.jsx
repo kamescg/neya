@@ -1,6 +1,8 @@
 import {RegionTop, RegionFooter} from 'core';
 import {Menu} from '@horizin/design-system-molecules';
 import {TokenBalance} from 'core';
+import {Authenticate} from '3box-ui-system';
+import {Connect} from 'web3connect-system';
 const styles = {
   container: {
     bg: 'paper',
@@ -45,6 +47,15 @@ const SiteTemplate = ({sx, sxMain, styled, children, ...props}) => {
             <Atom.Heading sm thin>
               jobs/bank for the developers
             </Atom.Heading>
+            <Atom.Flex alignCenter between sx={{flex: 1}}>
+              <Molecule.Link to="/profile">
+                <Atom.Span normal sx={{mr: 3, fontSize: 0}}>
+                  View Profile
+                </Atom.Span>
+              </Molecule.Link>
+              <Authenticate display="avatar" />
+            </Atom.Flex>
+            <Connect />
             <Atom.HorizontalRule sx={styles.hr} />
             <TokenBalance
               img="https://instadapp.io/dashboard/img/icons/tokens/eth.svg"

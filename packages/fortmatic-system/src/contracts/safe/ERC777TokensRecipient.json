@@ -1,0 +1,520 @@
+{
+  "contractName": "ERC777TokensRecipient",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "operatorData",
+          "type": "bytes"
+        }
+      ],
+      "name": "tokensReceived",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.5.0 <0.7.0;\n\ninterface ERC777TokensRecipient {\n    function tokensReceived(\n        address operator,\n        address from,\n        address to,\n        uint256 amount,\n        bytes calldata data,\n        bytes calldata operatorData\n    ) external;\n}",
+  "sourcePath": "/Users/admin/Documents/GitHub/contracts/safe-contracts/contracts/interfaces/ERC777TokensRecipient.sol",
+  "ast": {
+    "absolutePath": "/Users/admin/Documents/GitHub/contracts/safe-contracts/contracts/interfaces/ERC777TokensRecipient.sol",
+    "exportedSymbols": {
+      "ERC777TokensRecipient": [
+        2404
+      ]
+    },
+    "id": 2405,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2388,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:17"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 2404,
+        "linearizedBaseContracts": [
+          2404
+        ],
+        "name": "ERC777TokensRecipient",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 2403,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokensReceived",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2401,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2390,
+                  "name": "operator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2403,
+                  "src": "104:16:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2389,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "104:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2392,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2403,
+                  "src": "130:12:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2391,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "130:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2394,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2403,
+                  "src": "152:10:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2393,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "152:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2396,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2403,
+                  "src": "172:14:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2395,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "172:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2398,
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2403,
+                  "src": "196:19:17",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 2397,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "196:5:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2400,
+                  "name": "operatorData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2403,
+                  "src": "225:27:17",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 2399,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "225:5:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "94:164:17"
+            },
+            "returnParameters": {
+              "id": 2402,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "267:0:17"
+            },
+            "scope": 2404,
+            "src": "71:197:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2405,
+        "src": "33:237:17"
+      }
+    ],
+    "src": "0:270:17"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/admin/Documents/GitHub/contracts/safe-contracts/contracts/interfaces/ERC777TokensRecipient.sol",
+    "exportedSymbols": {
+      "ERC777TokensRecipient": [
+        2404
+      ]
+    },
+    "id": 2405,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2388,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:17"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 2404,
+        "linearizedBaseContracts": [
+          2404
+        ],
+        "name": "ERC777TokensRecipient",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 2403,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokensReceived",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2401,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2390,
+                  "name": "operator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2403,
+                  "src": "104:16:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2389,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "104:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2392,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2403,
+                  "src": "130:12:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2391,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "130:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2394,
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2403,
+                  "src": "152:10:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2393,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "152:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2396,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2403,
+                  "src": "172:14:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2395,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "172:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2398,
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2403,
+                  "src": "196:19:17",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 2397,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "196:5:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2400,
+                  "name": "operatorData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2403,
+                  "src": "225:27:17",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 2399,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "225:5:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "94:164:17"
+            },
+            "returnParameters": {
+              "id": 2402,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "267:0:17"
+            },
+            "scope": 2404,
+            "src": "71:197:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2405,
+        "src": "33:237:17"
+      }
+    ],
+    "src": "0:270:17"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.11+commit.c082d0b4.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.3",
+  "updatedAt": "2019-11-10T01:32:19.355Z"
+}

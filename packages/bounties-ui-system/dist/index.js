@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "BountyItem", {
   enumerable: true,
   get: function get() {
-    return _Login.BountyItem;
+    return _BountyItem.BountyItem;
   }
 });
 Object.defineProperty(exports, "QueryBountyList", {
@@ -16,6 +16,6 @@ Object.defineProperty(exports, "QueryBountyList", {
   }
 });
 
-var _Login = require("./Login");
+var _BountyItem = require("./BountyItem");
 
 var _QueryBountyList = require("./QueryBountyList");

@@ -7,17 +7,27 @@
 #portal {
 }
 
+#WEB3_CONNECT_MODAL_ID {
+  position: relative;
+  z-index: 1000;
+}
+
 .carousel {
   width: 100%;
 }
 
 html {
+  /* overflow: hidden; */
   height: 100%;
 }
 
 body {
   /* overflow: hidden; */
   min-height: 100%;
+}
+
+#root {
+  overflow: visible;
 }
 
 p {
@@ -49,8 +59,9 @@ form {
 }
 
 img {
+  height: auto;
   max-width: 100%;
-  width: 100%;
+  width: inherit;
 }
 
 li {

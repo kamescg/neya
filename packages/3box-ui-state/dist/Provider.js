@@ -37,8 +37,8 @@ var Provider = (_ref) => {
       props = _objectWithoutProperties(_ref, ["children"]);
 
   var initialState = (0, _react.useContext)(_Context.default);
-  var [state, dispatch] = (0, _react.useReducer)(_reducer.default, initialState); // console.log(state, 'Box Provider');
-  // Uncomment to add WalletConnect feature:flag:walletconnect
+  var [state, dispatch] = (0, _react.useReducer)(_reducer.default, initialState);
+  console.log(state, 'Box Provider'); // Uncomment to add WalletConnect feature:flag:walletconnect
   // useAddExtension(state, dispatch, props.extensions[0]);
 
   (0, _effects.useAutoEnableEffect)(state, dispatch);

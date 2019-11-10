@@ -25,7 +25,8 @@ const MenuItem = ({children, label, to, icon, vertical, ...props}) => {
     flexDirection: 'column',
     // p: '8px',
     mr: 2,
-    // width: 18
+    height: 18,
+    width: 18,
   });
   const [sxImageWrapperChild, setImageWrapperChild] = useState({
     // bg: 'rgba(255,255,255,0.9)',

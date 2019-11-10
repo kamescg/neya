@@ -10,7 +10,6 @@ import {Slides} from '@horizin/design-system-molecules';
 
 const IndexPage = () => (
   <Site>
-    {/* <SEO title="Home" /> */}
     <Showcase />
     <ApplicationPreview />
     <Preview />

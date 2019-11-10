@@ -6,46 +6,47 @@
  */
 
 /* --- Global --- */
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 /* --- Component --- */
 const useOpenSpaceEffect = (state, dispatch) => {
-  const [dispatched, setDispatched] = useState()
+  const [dispatched, setDispatched] = useState();
 
   useEffect(() => {
     if (state.instance && state.store && state.store.open) {
-      const selected = state.store.open[0]
+      const selected = state.store.open[0];
       if (selected) {
         try {
           const runEffect = async () => {
-            let threads
-            const space = await state.instance.openSpace(selected.space)
+            let threads;
+            console.log(selected, 'opening space');
+            const space = await state.auth.instance.openSpace(selected.space);
             if (space.all) {
-              threads = await space.subscribedThreads()
+              threads = await space.subscribedThreads();
             }
             dispatch({
-              type: "OPEN_SPACE_SUCCESS",
+              type: 'OPEN_SPACE_SUCCESS',
               instance: space,
               space: selected.space,
               threads
-            })
-            setDispatched(true)
+            });
+            setDispatched(true);
           };
           runEffect();
         } catch (error) {
           dispatch({
-            type: "OPEN_SPACE_FAILURE",
+            type: 'OPEN_SPACE_FAILURE',
             payload: error,
-            space: selected.space,
-          })
-          setDispatched(false)
+            space: selected.space
+          });
+          setDispatched(false);
         }
       }
     }
-  }, [state.instance.openSpace, state.store.open])
+  }, [state.instance.openSpace, state.store.open]);
 
-  return dispatched
-}
+  return dispatched;
+};
 
 /* --- Export --- */
-export default useOpenSpaceEffect
+export default useOpenSpaceEffect;

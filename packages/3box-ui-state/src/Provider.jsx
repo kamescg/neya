@@ -34,7 +34,7 @@ const Provider = ({ children, ...props }) => {
   const initialState = useContext(Context);
   const [state, dispatch] = useReducer(reducerActions, initialState);
 
-  // console.log(state, 'Box Provider');
+  console.log(state, 'Box Provider');
 
   // Uncomment to add WalletConnect feature:flag:walletconnect
   // useAddExtension(state, dispatch, props.extensions[0]);

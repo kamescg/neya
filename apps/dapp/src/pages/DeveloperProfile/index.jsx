@@ -83,7 +83,7 @@ const styles = {
     opacity: 0.5,
   },
   cardMain: {
-    bg: 'white',
+    bg: 'paper',
     boxShadow: 0,
     p: 3,
   },
@@ -175,8 +175,6 @@ const DeveloperSummary = props => {
       <ActivityPreview sx={{mx: 3}} />
       <Rank sx={{mx: 3}} />
       <CommunityPreview sx={{mx: 3}} />
-      <KudosPreview sx={{mx: 3}} />
-      <PortfolioPreview sx={{mx: 3}} />
     </Atom.Flex>
   );
 };

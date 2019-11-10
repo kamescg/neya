@@ -1,5 +1,5 @@
 const Communities = ({sx, ...props}) => (
-  <Atom.Box card sx={{bg: 'purple', ...sx}}>
+  <Atom.Box card sx={{...sx}}>
     <Atom.Heading lg heavy>
       Communities
     </Atom.Heading>

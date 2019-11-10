@@ -1,6 +1,5 @@
 /**
  * @name TipButton
- * @author kames
  * @description Tip Developer using DAI
  * @todo Add MakerDAI js library to make it simple to transfer DAI.
  */

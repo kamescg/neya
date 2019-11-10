@@ -1,19 +1,14 @@
 /* --- Global --- */
 import {Link} from '@reach/router';
 import {ColorMode, SmallStatistic} from 'core';
-import {Authenticate} from '3box-ui-system';
+import {Authenticate, Login} from '3box-ui-system';
+import {SendTransaction, DeployERC20, TokenTransfer} from 'fortmatic-system';
 
 export default props => (
   <Atom.Flex alignCenter between sx={{variant: 'regions.header'}}>
     {/* Left */}
     <Atom.Flex alignCenter>
-      <Link to="/">
-        <Atom.Flex alignCenter>
-          <Atom.Box sx={{mr: 2}}>
-            <ColorMode />
-          </Atom.Box>
-        </Atom.Flex>
-      </Link>
+      <ColorMode />
 
       {/* Menu */}
       <Atom.Flex alignCenter ml={4}>
@@ -32,8 +27,16 @@ export default props => (
               to: '/earn',
             },
             {
+              label: 'Gigs',
+              to: '/gigs',
+            },
+            {
               label: 'Jobs',
               to: '/jobs',
+            },
+            {
+              label: 'Create',
+              to: '/create',
             },
           ]}
         />
@@ -43,6 +46,7 @@ export default props => (
     <Atom.Flex alignCenter>
       <Stats sx={{mr: 3}} />
       <Authenticate display="avatar" />
+      <Login display="avatar" />
     </Atom.Flex>
   </Atom.Flex>
 );

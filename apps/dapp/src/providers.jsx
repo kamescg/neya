@@ -2,6 +2,9 @@
 import {ThemeProvider} from 'theme-ui';
 import {PortalProvider, PortalTree} from 'react-portal-system';
 import {BoxProvider} from '3box-ui-system';
+import {EthersProvider} from 'ethers-system';
+import {FortmaticProvider} from 'fortmatic-system';
+import Token from 'contracts/ERC20';
 
 /* --- Local --- */
 import theme from './assets/theme';
@@ -15,10 +18,14 @@ export default props => {
     <ThemeProvider theme={theme}>
       <PortalProvider>
         {/* <BoxProvider extensions={extensions}> */}
-        <BoxProvider>
-          <PortalTree />
-          {props.children}
-        </BoxProvider>
+        <FortmaticProvider>
+          <EthersProvider contracts={[Token]}>
+            <BoxProvider>
+              <PortalTree />
+              {props.children}
+            </BoxProvider>
+          </EthersProvider>
+        </FortmaticProvider>
       </PortalProvider>
     </ThemeProvider>
   );

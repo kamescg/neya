@@ -1,39 +1,135 @@
 "use strict";
 
+var _interopRequireDefault = require("/Users/admin/Documents/GitHub/opensource/NEYA/node_modules/babel-preset-react-app/node_modules/@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.BountyItem = void 0;
 
-var BountyItem = function BountyItem(props) {
-  return React.createElement(Atom.Flex, {
+var _react = _interopRequireDefault(require("react"));
+
+var _designSystemOrganisms = require("@horizin/design-system-organisms");
+
+var styles = {
+  icon: {
+    borderRadius: 8,
+    m: 3,
+    maxWidth: 32
+  },
+  button: {},
+  popup: {
     card: true,
-    center: true,
-    column: true,
-    sx: styles.job
-  }, React.createElement(Atom.Image, {
-    sx: {
-      borderRadius: 8,
-      m: 3,
-      maxWidth: 32
-    },
-    src: "data:image/jpeg;base64,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"
-  }), React.createElement(Atom.Heading, {
+    height: 700,
+    width: 700
+  },
+  iframe: {
+    height: 700,
+    width: 700
+  }
+};
+
+var BountyItem = function BountyItem(props) {
+  return _react["default"].createElement(Atom.Box, {
+    card: true,
+    sx: props.sx
+  }, _react["default"].createElement(Atom.Image, {
+    sx: styles.icon,
+    src: props.src
+  }), _react["default"].createElement(Atom.Heading, {
+    lg: true,
+    thin: true
+  }, props.title), _react["default"].createElement(Atom.Heading, {
     md: true,
-    heavy: true,
-    sx: {
-      color: 'charcoal'
-    }
-  }, props.title), React.createElement(Atom.Heading, {
+    heavy: true
+  }, "Earn: $", props.usd_price), _react["default"].createElement(Atom.Heading, {
     sm: true,
-    thin: true,
-    sx: {
-      color: 'charcoal'
-    }
-  }, props.subtitle), React.createElement(Atom.Heading, {
+    thin: true
+  }, _react["default"].createElement("a", {
+    target: "_blank",
+    href: "https://explorer.bounties.network"
+  }, _react["default"].createElement(Atom.Span, {
+    tag: true
+  }, props.platform))), _react["default"].createElement(Atom.Heading, {
+    sm: true,
+    thin: true
+  }, "Bounty Stage: ", props.bounty_stage), _react["default"].createElement(Atom.Heading, {
+    sm: true,
+    thin: true
+  }, "Create: ", props.created), _react["default"].createElement(Atom.Heading, {
     lg: true,
     normal: true
-  }, props.value));
+  }), _react["default"].createElement(_designSystemOrganisms.Modal, {
+    content: _react["default"].createElement(PreviewPopup, null)
+  }, _react["default"].createElement(Atom.Button, {
+    sx: styles.button
+  }, "Complete Bounty")));
 };
 
 exports.BountyItem = BountyItem;
+BountyItem.defaultProps = {};
+
+var calculateLink = function calculateLink(platform, id) {
+  return {
+    'bounties-network': "https://explorer.bounties.network/bounty/".concat(id),
+    "default": "https://explorer.bounties.network/bounty/".concat(id)
+  }[platform || 'default'];
+};
+
+var PreviewPopup = function PreviewPopup(bounty_id) {
+  return _react["default"].createElement(Atom.Box, {
+    sx: styles.popup
+  }, _react["default"].createElement("iframe", {
+    style: styles.iframe,
+    src: "https://explorer.bounties.network/bounty/3653"
+  }));
+}; // application_count: 0
+// approvers: [22246]
+// attached_data_hash: ""
+// attached_filename: ""
+// attached_url: "https://konzortia.capital"
+// balance: "20000000000000000000"
+// bounty_created: "2019-11-07T21:42:09"
+// bounty_id: 15
+// bounty_stage: 1
+// calculated_balance: "20.000000000000000000000000000000"
+// calculated_fulfillment_amount: "20.000000000000000000000000000000"
+// categories: (4) [{…}, {…}, {…}, {…}]
+// comment_count: 0
+// contract_state: "{"issuers": {"0x8d4d05d51771dbbd38276d8f931cfcad03724524": 0}, "approvers": {"0x8d4d05d51771dbbd38276d8f931cfcad03724524": 0}}"
+// contract_version: "2.2"
+// created: "2019-11-07T21:42:31.099356"
+// current_market_token_data: null
+// data: "QmdWKBEf6sk1vk17BGhmE8ApNTcTkkcdQJDLoWjcDwxNqr"
+// deadline: "2020-06-01T13:45:32"
+// description: "Koura is the new asset class, the currency of the future, today. A liquid instrument that also has intrinsic value by mixing all the benefits of and equity and fiat currency, without any of their drawbacks. Koura is not only created to become the liquid instrument that all investors dream of, but it will benefit them with dividends paid out yearly. Essentially, Koura was born from the raw material of the preferred shares issued by Konzortia Capital to be the base currency for all transactions that take place in InveStart, Capitalista, and Novabank.↵↵Konzortia Capital is a fintech holding company that owns shares of the group of companies that integrate the consortium: InveStart, Capitalista, and Novabank. We also provide these companies with the technological platform that will allow them to operate using blockchain technology.  We bring cutting-edge technology applications to financial markets and the business intelligence necessary to develop the next generation of a globalized financial market.↵↵In order to achieve our bold and uncompromising vision we want to build a loyal and participative community that will be instrumental in shaping, together with us, this bright future. Enter Bounty Marketing or bounty crypto programs, essentially, a list of tasks generated by a bounty holder, in this case, Koura’s parent company, Konzortia Capital for a cryptocurrency project; and generally, anyone can partake in as a bounty hunter and get paid in KOURAS. So, we’re offering handsome rewards to whomever wants to participate, in exchange for specific actions benefiting our project. Said actions or task will range from generating community growth, joining our telegram channel, retweeting content, liking us on Facebook, signature campaigns on specialized website such as BitcoinTalk, or article creation in Medium, YouTube videos, Instagram post, etc.↵Keep reading if you want to find out all of the ways you can help us bring the future of cryptocurrencies, today and get rewarded for it.↵↵# Description↵↵In Koura Discord Discussion and Invite Bounty, hunters are rewarded KOURA by for joining, participating, and creating an invite link for our Koura Discord group. Hunters must write positive messages about KOURA in the Koura Discord group, and also engaging comments that enable and promote discussion and engagement.↵↵## Rewards↵↵1 KOURA= $1 at STO price.↵•	3 messages on the Koura Discord group: 		5 KOURA per week↵•	3 invite links posted on the channel #general: 	5 KOURA per week↵- BONUS:  Extra 1 KOURA for each additional message and invite link shared above the mandatory three a week (max 20 bonus per week).↵- BONUS CONTEST: The top 10 bounty hunters will be rewarded additional KOURA.↵- IMPORTANT: Spam or duplicate post will result in automatic disqualification from the bounty.↵↵## Rules↵↵•	Hunters must post at least 3 messages a week in the Koura Discord group.↵•	Hunters must post at least 3 invite links in the channel #general↵•	Maximum of 6 invite links per week posted on the channel #general.↵•	The timestamp on the first message is when your week starts.↵•	Submit a screenshot of you being in group↵•	Post engaging and well thought out messages.↵•	English only.↵•	These messages must have insight on the Koura project, must be positive or have constructive criticism and not be a re-post or plagiarized.↵•	Copy/paste information will result in disqualification. ↵•	Hunters must submit screenshots via Google Docs link, of the posts made on the Koura Discord group and on the channel #general every week.↵•	For bonus and mandatory messages, any spam, removed posts, or anything of very low quality/receiving bad comments will not count and will result in an automatic disqualification from this bounty.↵•	The bounty hunter cannot make any representations regarding about Konzortia Capital and Koura that are not already public or approved in advance in writing by Konzortia Capital.↵↵Attention: You may not "reserve" spots by submitting broken links, empty posts, or anything as a placeholder. You may not use multiple submission content (the same thing or slight variation of) across other Konzortia Capital bounties. You may not plagiarize content and pass a plagiarism test. These are all strict rule violations, and disqualifies you from any reward in the Konzortia campaign as a whole, INCLUDING THIS BOUNTY.↵↵## Submission Instructions↵↵•	Submit a screenshot of you, showing the username, being in the discord group.↵•	Submit a link to your Google Doc containing all posts published (screenshots) and share it here weekly.↵•	This is Koura account on Discord: Koura.↵•	Contact us if you have any questions: contact@koura.cc."
+// experience_level: 1
+// fulfillers_need_approval: false
+// fulfillment_amount: "20000000000000000000"
+// fulfillment_count: 0
+// id: 3643
+// image_preview: "https://assets.bounties.network/production/bounty_preview/3643-037cd633-9a0d-4979-b377-ef446d2e9b31.png"
+// issuer: "0x8d4d05d51771dbbd38276d8f931cfcad03724524"
+// issuer_address: ""
+// issuer_email: ""
+// issuer_githubUsername: ""
+// issuer_name: ""
+// issuers: [22246]
+// modified: "2019-11-07T21:42:32.562889"
+// old_balance: null
+// platform: "bounties-network"
+// private_fulfillments: true
+// raw_event_data: null
+// raw_ipfs_data: "b'{"payload":{"uid":"77731bf7-420c-4b1c-aec8-e635a0bbac33","title":"Koura Discord Discussion and Invite Bounty","description":"Koura is the new asset class, the currency of the future, today. A liquid instrument that also has intrinsic value by mixing all the benefits of and equity and fiat currency, without any of their drawbacks. Koura is not only created to become the liquid instrument that all investors dream of, but it will benefit them with dividends paid out yearly. Essentially, Koura was born from the raw material of the preferred shares issued by Konzortia Capital to be the base currency for all transactions that take place in InveStart, Capitalista, and Novabank.\\n\\nKonzortia Capital is a fintech holding company that owns shares of the group of companies that integrate the consortium: InveStart, Capitalista, and Novabank. We also provide these companies with the technological platform that will allow them to operate using blockchain technology.  We bring cutting-edge technology applications to financial markets and the business intelligence necessary to develop the next generation of a globalized financial market.\\n\\nIn order to achieve our bold and uncompromising vision we want to build a loyal and participative community that will be instrumental in shaping, together with us, this bright future. Enter Bounty Marketing or bounty crypto programs, essentially, a list of tasks generated by a bounty holder, in this case, Koura\xe2\x80\x99s parent company, Konzortia Capital for a cryptocurrency project; and generally, anyone can partake in as a bounty hunter and get paid in KOURAS. So, we\xe2\x80\x99re offering handsome rewards to whomever wants to participate, in exchange for specific actions benefiting our project. Said actions or task will range from generating community growth, joining our telegram channel, retweeting content, liking us on Facebook, signature campaigns on specialized website such as BitcoinTalk, or article creation in Medium, YouTube videos, Instagram post, etc.\\nKeep reading if you want to find out all of the ways you can help us bring the future of cryptocurrencies, today and get rewarded for it.\\n\\n# Description\\n\\nIn Koura Discord Discussion and Invite Bounty, hunters are rewarded KOURA by for joining, participating, and creating an invite link for our Koura Discord group. Hunters must write positive messages about KOURA in the Koura Discord group, and also engaging comments that enable and promote discussion and engagement.\\n\\n## Rewards\\n\\n1 KOURA= $1 at STO price.\\n\xe2\x80\xa2\\t3 messages on the Koura Discord group: \\t\\t5 KOURA per week\\n\xe2\x80\xa2\\t3 invite links posted on the channel #general: \\t5 KOURA per week\\n- BONUS:  Extra 1 KOURA for each additional message and invite link shared above the mandatory three a week (max 20 bonus per week).\\n- BONUS CONTEST: The top 10 bounty hunters will be rewarded additional KOURA.\\n- IMPORTANT: Spam or duplicate post will result in automatic disqualification from the bounty.\\n\\n## Rules\\n\\n\xe2\x80\xa2\\tHunters must post at least 3 messages a week in the Koura Discord group.\\n\xe2\x80\xa2\\tHunters must post at least 3 invite links in the channel #general\\n\xe2\x80\xa2\\tMaximum of 6 invite links per week posted on the channel #general.\\n\xe2\x80\xa2\\tThe timestamp on the first message is when your week starts.\\n\xe2\x80\xa2\\tSubmit a screenshot of you being in group\\n\xe2\x80\xa2\\tPost engaging and well thought out messages.\\n\xe2\x80\xa2\\tEnglish only.\\n\xe2\x80\xa2\\tThese messages must have insight on the Koura project, must be positive or have constructive criticism and not be a re-post or plagiarized.\\n\xe2\x80\xa2\\tCopy/paste information will result in disqualification. \\n\xe2\x80\xa2\\tHunters must submit screenshots via Google Docs link, of the posts made on the Koura Discord group and on the channel #general every week.\\n\xe2\x80\xa2\\tFor bonus and mandatory messages, any spam, removed posts, or anything of very low quality/receiving bad comments will not count and will result in an automatic disqualification from this bounty.\\n\xe2\x80\xa2\\tThe bounty hunter cannot make any representations regarding about Konzortia Capital and Koura that are not already public or approved in advance in writing by Konzortia Capital.\\n\\nAttention: You may not \\"reserve\\" spots by submitting broken links, empty posts, or anything as a placeholder. You may not use multiple submission content (the same thing or slight variation of) across other Konzortia Capital bounties. You may not plagiarize content and pass a plagiarism test. These are all strict rule violations, and disqualifies you from any reward in the Konzortia campaign as a whole, INCLUDING THIS BOUNTY.\\n\\n## Submission Instructions\\n\\n\xe2\x80\xa2\\tSubmit a screenshot of you, showing the username, being in the discord group.\\n\xe2\x80\xa2\\tSubmit a link to your Google Doc containing all posts published (screenshots) and share it here weekly.\\n\xe2\x80\xa2\\tThis is Koura account on Discord: Koura.\\n\xe2\x80\xa2\\tContact us if you have any questions: contact@koura.cc.","sourceFileHash":"","sourceDirectoryHash":"","sourceFileName":"","webReferenceURL":"https://konzortia.capital","categories":["social media","token","discord","fintech"],"revisions":3,"privateFulfillments":true,"fulfillersNeedApproval":false,"created":1573162837,"tokenAddress":"0xBEeb03AB576b9b6d35eB83f0aE89dB8244B4e6af","difficulty":1,"issuer":{"address":"0x8d4d05d51771dbbd38276d8f931cfcad03724524","email":"koura.cc@gmail.com","name":"Konzortia Capital"},"funders":[{"address":"0x8d4d05d51771dbbd38276d8f931cfcad03724524","email":"koura.cc@gmail.com","name":"Konzortia Capital"}],"symbol":"KOU","fulfillmentAmount":"20000000000000000000"},"meta":{"platform":"bounties-network","schemaVersion":"1.0","schemaName":"standardSchema"}}'"
+// revisions: 3
+// schema_name: null
+// schema_version: "1.0"
+// title: "Koura Discord Discussion and Invite Bounty"
+// token: null
+// token_contract: "0xBEeb03AB576b9b6d35eB83f0aE89dB8244B4e6af"
+// token_decimals: 18
+// token_lock_price: null
+// token_symbol: "KOU"
+// token_version: 20
+// uid: null
+// usd_price: 0

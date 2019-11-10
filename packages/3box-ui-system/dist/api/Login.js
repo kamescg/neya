@@ -51,7 +51,7 @@ var Login = (_ref2) => {
 
   var enabled = (0, _effects.useEnableEffect)(box);
   var login = (0, _effects.useOpenRequestEffect)(box);
-  return _react.default.createElement(_react.default.Fragment, null, !enabled.ready && _react.default.createElement(_EnableEthereum.default, null), enabled.ready && !login.isDispatched && !login.isLoggedIn ? _react.default.createElement("span", {
+  return _react.default.createElement(_react.default.Fragment, null, !login.isDispatched && !login.isLoggedIn ? _react.default.createElement("span", {
     onClick: box.login
   }, (0, _uiCompose.Component)(props.componentLoggedOut, _objectSpread({
     label: props.loggedOutLabel
