@@ -1,0 +1,60 @@
+{
+  "data": {
+    "addresses": {
+      "bitcoin": "1QBc3UE9HrAasydPYU3WWKm6cfPKN2JHiQ",
+      "litecoin": "LWtW96kgG9wdL3MqE9cyKVeDXezyKFCReU",
+      "bitcoincash": "qr9g47lke3g7nseveuas27ppl4zv5v39pyrlpl03tl",
+      "ethereum": "0x17825970b71bdab6277917e739f1edc91f569d8f",
+      "usdc": "0x17825970b71bdab6277917e739f1edc91f569d8f"
+    },
+    "code": "93HZWKMB",
+    "created_at": "2019-11-10T10:18:16Z",
+    "description": "Money For People",
+    "expires_at": "2019-11-10T11:18:16Z",
+    "hosted_url": "https://commerce.coinbase.com/charges/93HZWKMB",
+    "id": "b84be498-66f2-467c-a41e-68b6cc7b8a6c",
+    "metadata": {},
+    "name": "The Human Fund",
+    "payments": [],
+    "pricing": {
+      "local": {"amount": "100.00", "currency": "USD"},
+      "bitcoincash": {"amount": "0.35064958", "currency": "BCH"},
+      "litecoin": {"amount": "1.58591706", "currency": "LTC"},
+      "bitcoin": {"amount": "0.01132464", "currency": "BTC"},
+      "ethereum": {"amount": "0.534702000", "currency": "ETH"},
+      "usdc": {"amount": "100.000000", "currency": "USDC"}
+    },
+    "pricing_type": "fixed_price",
+    "resource": "charge",
+    "timeline": [{"status": "NEW", "time": "2019-11-10T10:18:16Z"}]
+  },
+  "data": {
+    "addresses": {
+      "bitcoin": "1Noe83sfZWCrNzn9fZUe4dshWWVmdbrXrv",
+      "litecoin": "LXNj9CaYruxayZorSUSB2VGq2zxwistpDK",
+      "bitcoincash": "qzs57dgra8wcj4zxrdne5nkupj5g0ww6tvqrygwmg3",
+      "ethereum": "0x3c47d929fbad5b65d0ce5f276796e0c25b68210d",
+      "usdc": "0x3c47d929fbad5b65d0ce5f276796e0c25b68210d"
+    },
+    "code": "A4MJ6PYG",
+    "created_at": "2019-11-10T10:23:02Z",
+    "description": "Money For People",
+    "expires_at": "2019-11-10T11:23:02Z",
+    "hosted_url": "https://commerce.coinbase.com/charges/A4MJ6PYG",
+    "id": "0c57ba74-97bd-48c2-8b84-3e46d22e04b3",
+    "metadata": {},
+    "name": "The Human Fund",
+    "payments": [],
+    "pricing": {
+      "local": {"amount": "100.00", "currency": "USD"},
+      "bitcoincash": {"amount": "0.35046524", "currency": "BCH"},
+      "litecoin": {"amount": "1.58415842", "currency": "LTC"},
+      "bitcoin": {"amount": "0.01132005", "currency": "BTC"},
+      "ethereum": {"amount": "0.534516000", "currency": "ETH"},
+      "usdc": {"amount": "100.000000", "currency": "USDC"}
+    },
+    "pricing_type": "fixed_price",
+    "resource": "charge",
+    "timeline": [{"status": "NEW", "time": "2019-11-10T10:23:02Z"}]
+  }
+}

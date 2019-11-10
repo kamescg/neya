@@ -1,0 +1,10 @@
+{
+  "name": "Fund Bounty",
+  "description": "Add money to the bounty/gig so developers will complete the task.",
+  "local_price": {
+    "amount": "100.00",
+    "currency": "USD"
+  },
+  "pricing_type": "fixed_price",
+  "requested_info": ["name", "email"]
+}
