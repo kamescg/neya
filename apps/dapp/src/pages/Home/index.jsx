@@ -77,8 +77,8 @@ const Showcase = props => {
 
 const Features = props => {
   return (
-    <Atom.Box sx={{bg: 'paper', color: 'text', py: 4}}>
-      <Atom.Container sx={{my: 5}}>
+    <Atom.Box sx={{bg: 'paper', color: 'text', py: 4, zIndex: 1000}}>
+      <Atom.Container sx={{my: 5, zIndex: 10000}}>
         <Atom.Flex center column>
           <Atom.Heading giga>Attract Top Talent</Atom.Heading>
           <Atom.Heading md thin sx={{textAlign: 'center'}}>
@@ -89,7 +89,7 @@ const Features = props => {
             We've aligned incentives to ensure you have access to a top talent
             pool
           </Atom.Heading>
-          <Atom.Box card sx={{width: [500], my: 4}}>
+          <Atom.Box card sx={{width: [500], my: 4, zIndex: 1000}}>
             <FormJobCreate />
           </Atom.Box>
           {/* <CoinbaseCommerceButton

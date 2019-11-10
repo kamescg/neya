@@ -4,14 +4,8 @@ import {
   ProfileIdentity,
   ProfileDetailsOccupation,
   ProfileCover,
-  ProfileImage,
 } from '3box-ui-profiles';
 /* --- Local --- */
-import {
-  ProfileIdentityName,
-  ProfileIdentityDetails,
-  ProfileIdentitySocial,
-} from 'components/profile';
 import {Profile, Dashboard} from 'templates';
 
 import Kudos from './Kudos';
@@ -21,10 +15,8 @@ import Activity from './Activity';
 import ActivityPreview from './ActivityPreview';
 import Rank from './Rank';
 import Rating from './Rating';
-import RatingPreview from './RatingPreview';
 import CommunityPreview from './CommunityPreview';
-import KudosPreview from './KudosPreview';
-import PortfolioPreview from './PortfolioPreview';
+import {BoxContext} from '3box-ui-state';
 
 const styles = {
   // Cover Region
@@ -109,64 +101,69 @@ const styles = {
 };
 
 const SearchView = props => (
-  <Dashboard>
-    {/* Showcase */}
-    <Atom.Flex sx={styles.cover}>
-      <ProfileCover sx={{opacity: 0.52}} ratio={0.3} />
-      <Atom.Flex sx={styles.coverInner}>
-        {/* Left */}
-        <Atom.Flex sx={styles.coverLeft}></Atom.Flex>
-        {/* Right */}
-        <Atom.Flex sx={styles.coverRight}>
-          <Kudos />
-          <Identity
-            sx={styles.name}
-            sxOccupation={{
-              fontWeight: 400,
-            }}
-          />
-          <Atom.Absolute sx={{bottom: 0, right: 0, m: 3}}>
-            <Rating />
-          </Atom.Absolute>
-        </Atom.Flex>
-      </Atom.Flex>
-    </Atom.Flex>
-
-    {/* Main */}
-    <Atom.Flex sx={styles.main}>
-      <Atom.Flex sx={styles.aside}>
-        {/* User Card */}
-        <Atom.Flex column sx={styles.card}>
-          <TipButton />
-          <Atom.Flex center column sx={styles.cardCover}>
-            <ProfileCover sx={styles.coverPhoto} ratio={0.3} />
-
-            <Avatar sx={{width: 100, height: 100}} />
-            <ProfileIdentity sx={styles.cardIdentity} />
-            <ProfileDetailsOccupation sx={styles.cardOccupation} />
+  <BoxContext>
+    {box => (
+      <Dashboard>
+        {/* Showcase */}
+        <Atom.Flex sx={styles.cover}>
+          <ProfileCover sx={{opacity: 0.52}} ratio={0.3} />
+          <Atom.Flex sx={styles.coverInner}>
+            {/* Left */}
+            <Atom.Flex sx={styles.coverLeft}></Atom.Flex>
+            {/* Right */}
+            <Atom.Flex sx={styles.coverRight}>
+              <Kudos />
+              <Identity
+                box={box}
+                sx={styles.name}
+                sxOccupation={{
+                  fontWeight: 400,
+                }}
+              />
+              <Atom.Absolute sx={{bottom: 0, right: 0, m: 3}}>
+                <Rating />
+              </Atom.Absolute>
+            </Atom.Flex>
           </Atom.Flex>
-          <Atom.Flex sx={styles.cardMain}>
-            <Atom.Paragraph sx={{fontSize: 0}}>
-              <Atom.Heading md heavy>
-                Biography
-              </Atom.Heading>
-              Nullam pulvinar tortor sed turpis molestie, porttitor rutrum dolor
-              pulvinar. Integer metus tellus, efficitur ultrices tempus et,
-              ultricies ac augue. Duis nec tincidunt sem. Aliquam vel aliquam
-              mauris. Cras eleifend fermentum gravida. Fusce rutrum tempor
-              mauris, congue tincidunt enim.
-            </Atom.Paragraph>
-          </Atom.Flex>
-          <Atom.Flex sx={styles.cardFooter}></Atom.Flex>
         </Atom.Flex>
-      </Atom.Flex>
 
-      <Atom.Flex column sx={styles.content}>
-        <DeveloperSummary />
-        <Activity />
-      </Atom.Flex>
-    </Atom.Flex>
-  </Dashboard>
+        {/* Main */}
+        <Atom.Flex sx={styles.main}>
+          <Atom.Flex sx={styles.aside}>
+            {/* User Card */}
+            <Atom.Flex column sx={styles.card}>
+              <TipButton />
+              <Atom.Flex center column sx={styles.cardCover}>
+                <ProfileCover sx={styles.coverPhoto} ratio={0.3} />
+
+                <Avatar sx={{width: 100, height: 100}} />
+                <ProfileIdentity sx={styles.cardIdentity} />
+                <ProfileDetailsOccupation sx={styles.cardOccupation} />
+              </Atom.Flex>
+              <Atom.Flex sx={styles.cardMain}>
+                <Atom.Paragraph sx={{fontSize: 0}}>
+                  <Atom.Heading md heavy>
+                    Biography
+                  </Atom.Heading>
+                  Nullam pulvinar tortor sed turpis molestie, porttitor rutrum
+                  dolor pulvinar. Integer metus tellus, efficitur ultrices
+                  tempus et, ultricies ac augue. Duis nec tincidunt sem. Aliquam
+                  vel aliquam mauris. Cras eleifend fermentum gravida. Fusce
+                  rutrum tempor mauris, congue tincidunt enim.
+                </Atom.Paragraph>
+              </Atom.Flex>
+              <Atom.Flex sx={styles.cardFooter}></Atom.Flex>
+            </Atom.Flex>
+          </Atom.Flex>
+
+          <Atom.Flex column sx={styles.content}>
+            <DeveloperSummary />
+            <Activity />
+          </Atom.Flex>
+        </Atom.Flex>
+      </Dashboard>
+    )}
+  </BoxContext>
 );
 
 const DeveloperSummary = props => {

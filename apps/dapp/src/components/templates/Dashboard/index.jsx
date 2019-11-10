@@ -1,7 +1,7 @@
 import {RegionTop, RegionFooter} from 'core';
 import {Menu} from '@horizin/design-system-molecules';
 import {TokenBalance} from 'core';
-import {Authenticate} from '3box-ui-system';
+import {Authenticate, Login} from '3box-ui-system';
 import {Connect} from 'web3connect-system';
 const styles = {
   container: {
@@ -53,7 +53,7 @@ const SiteTemplate = ({sx, sxMain, styled, children, ...props}) => {
                   View Profile
                 </Atom.Span>
               </Molecule.Link>
-              <Authenticate display="avatar" />
+              <Login display="avatar" />
             </Atom.Flex>
             <Connect />
             <Atom.HorizontalRule sx={styles.hr} />

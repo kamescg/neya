@@ -8,7 +8,10 @@ export default props => (
   <Atom.Flex alignCenter between sx={{variant: 'regions.header'}}>
     {/* Left */}
     <Atom.Flex alignCenter>
-      <ColorMode />
+      <Atom.Flex>
+        <Atom.Heading sx={{mr: 3, mb: 0}}>NEYA</Atom.Heading>
+        <ColorMode />
+      </Atom.Flex>
 
       {/* Menu */}
       <Atom.Flex alignCenter ml={4}>
@@ -54,7 +57,7 @@ export default props => (
 const Stats = props => {
   return (
     <Atom.Flex alignCenter sx={props.sx}>
-      <SmallStatistic label="month/gains" value="$5,000" />
+      <SmallStatistic label="month/gains" value="$5,261.34" />
       <SmallStatistic label="jobs" value="2" />
       <SmallStatistic label="gigs" value="5" />
     </Atom.Flex>
